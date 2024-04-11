@@ -36,6 +36,7 @@ import { formatEther } from "viem";
 import { Badge } from "@/components/ui/badge";
 import { Loader2, Check } from "lucide-react";
 import { Hero, Highlight } from "./ui/hero";
+import MintButton from "./ui/mint-btn";
 
 const formSchema = z.object({
   amount: z.coerce
@@ -97,13 +98,13 @@ export default function FundCard() {
           duration: 0.5,
           ease: [0.4, 0.0, 0.2, 1],
         }}
-        className="text-xl px-4 md:text-xl lg:text-xl font-semibold text-neutral-700 dark:text-zinc-300 max-w-4xl leading-relaxed lg:leading-snug text-left mx-auto"
+        className="text-xl px-4 md:text-xl lg:text-xl font-semibold text-neutral-700 dark:text-zinc-400 max-w-4xl leading-relaxed lg:leading-snug text-left mx-auto"
       >
         <Highlight className="mb-2.5  text-7xl -top-9 font-bold">
         Mint SoulBound NFT
         </Highlight>
         {/* break line */} <br />
-        The SoulBoundNFT minter dapp will leverage the robust infrastructure
+        The <span className="text-white">SoulBoundNFT</span>  minter dapp will leverage the robust infrastructure
           of the Klaytn blockchain, renowned for its scalability, security, and
           developer-friendly environment. Through this dapp, users will have the
           power to immortalize their digital creations, whether it be artwork,
@@ -116,44 +117,60 @@ export default function FundCard() {
       </div>
       <div className="bg-[#101010] h-[700px] text-zinc-300 pt-20">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-[50%] px-10">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-[57%] px-10">
             <FormField
               control={form.control}
               name="amount"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="flex flex-col gap-8">
                   <div>
-                    <FormLabel className="text-2xl text-zinc-400">
+                    <FormLabel className="text-4xl text-zinc-400">
                       Give me the url containing the NFT metadata you want to
                       save as a souvenir with <span className="text-white">SoulBound NFT</span>. I encourage you to
                       use Pinata Cloud.
                     </FormLabel>
                   </div>
                   <div>
-                    <FormLabel>Link URL Metadata : </FormLabel>
-                    <FormControl>
+                    <FormLabel className="text-md">Link URL Metadata : </FormLabel>
+                    <FormControl className="my-1.5">
                       <Input
                         type="text"
                         placeholder="Enter url link"
                         {...field}
                         value={field.value ?? ""}
+                        className="
+                        bg-[#383737] text-white
+                        border-none
+                        focus:outline-none
+                        placeholder-zinc-400
+                        w-[70%]
+                        "
                       />
                     </FormControl>
                   </div>
                   <div>
-                    <FormLabel>
+                    <FormLabel className="text-md ">
                       The wallet address you want to send the SoulBound NFT to:{" "}
                     </FormLabel>
-                    <FormControl>
+                    <FormControl className="my-1.5">
                       <Input
                         type="text"
                         placeholder="Enter Address"
                         {...field}
                         value={field.value ?? ""}
+                        className="
+                        bg-[#383737] text-white
+                        border-none
+                        focus:outline-none
+                        placeholder-zinc-400
+                        w-[70%]
+                        "
                       />
                     </FormControl>
                   </div>
-                  <FormDescription>Mint your SoulBound NFT now</FormDescription>
+                  <FormDescription
+                  className="text-md font-semibold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent"
+                  >Mint your SoulBound NFT now</FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -164,46 +181,49 @@ export default function FundCard() {
                 Please wait
               </Button>
             ) : (
-              <Button type="submit">Mint SoulBound NFT now</Button>
+              <MintButton/>
             )}
           </form>
         </Form>
       </div>
-      <div className="flex flex-col gap-2 items-start h-fit bg-[#101010] h-[700px] text-zinc-300">
-        <h3 className="scroll-m-20 text-lg font-semibold tracking-tight">
-          Transaction status
-        </h3>
-        {hash ? (
-          <div className="flex flex-row gap-2">
-            Hash:
-            <a
-              target="_blank"
-              className="text-blue-500 underline"
-              href={`https://sepolia.etherscan.io/tx/${hash}`}
-            >
-              {truncateAddress(hash)}
-            </a>
-          </div>
-        ) : (
-          <>
+      <div className="flex flex-col gap-2 items-start h-fit bg-[#101010] h-[50vh] text-zinc-300">
+        <div className="bg-zinc-700 ml-10 mb-10 p-7 rounded-xl">
+
+          <h3 className="scroll-m-20 text-lg font-semibold tracking-tight">
+            Transaction status
+          </h3>
+          {hash ? (
             <div className="flex flex-row gap-2">
-              Hash: no transaction hash until after submission
+              Hash:
+              <a
+                target="_blank"
+                className="text-blue-500 underline"
+                href={`https://sepolia.etherscan.io/tx/${hash}`}
+              >
+                {truncateAddress(hash)}
+              </a>
             </div>
-            <Badge variant="outline">No transaction yet</Badge>
-          </>
-        )}
-        {isConfirming && (
-          <Badge variant="secondary">
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            Waiting for confirmation...
-          </Badge>
-        )}
-        {isConfirmed && (
-          <Badge className="flex flex-row items-center bg-green-500 cursor-pointer">
-            <Check className="mr-2 h-4 w-4" />
-            Transaction confirmed!
-          </Badge>
-        )}
+          ) : (
+            <>
+              <div className="flex flex-row gap-2">
+                Hash: no transaction hash until after submission
+              </div>
+              <Badge variant="outline">No transaction yet</Badge>
+            </>
+          )}
+          {isConfirming && (
+            <Badge variant="secondary">
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              Waiting for confirmation...
+            </Badge>
+          )}
+          {isConfirmed && (
+            <Badge className="flex flex-row items-center bg-green-500 cursor-pointer">
+              <Check className="mr-2 h-4 w-4" />
+              Transaction confirmed!
+            </Badge>
+          )}
+        </div>
       </div>
     </div>
   );
