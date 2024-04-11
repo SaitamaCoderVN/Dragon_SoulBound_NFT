@@ -3,6 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { motion } from "framer-motion";
 import {
   Card,
   CardContent,
@@ -34,6 +35,7 @@ import { parseEther } from "viem";
 import { formatEther } from "viem";
 import { Badge } from "@/components/ui/badge";
 import { Loader2, Check } from "lucide-react";
+import { Hero, Highlight } from "./ui/hero";
 
 const formSchema = z.object({
   amount: z.coerce
@@ -79,30 +81,51 @@ export default function FundCard() {
     });
 
   return (
-    <Card className="w-full border-0 shadow-lg lg:max-w-3xl">
-      <CardHeader>
-        <CardTitle>Mint SoulBound NFT</CardTitle>
-        <CardDescription>
-          The SoulBoundNFT minter dapp will leverage the robust infrastructure
+    <div className="w-full row-start-2">
+      <div>
+        <Hero className="">
+        <motion.h1
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        animate={{
+          opacity: 1,
+          y: [20, -5, 0],
+        }}
+        transition={{
+          duration: 0.5,
+          ease: [0.4, 0.0, 0.2, 1],
+        }}
+        className="text-xl px-4 md:text-xl lg:text-xl font-semibold text-neutral-700 dark:text-zinc-300 max-w-4xl leading-relaxed lg:leading-snug text-left mx-auto"
+      >
+        <Highlight className="mb-2.5  text-7xl -top-9 font-bold">
+        Mint SoulBound NFT
+        </Highlight>
+        {/* break line */} <br />
+        The SoulBoundNFT minter dapp will leverage the robust infrastructure
           of the Klaytn blockchain, renowned for its scalability, security, and
           developer-friendly environment. Through this dapp, users will have the
           power to immortalize their digital creations, whether it be artwork,
           music, or any other form of digital content, as SoulBoundNFTs, imbued
           with a sense of authenticity and exclusivity.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
+      </motion.h1>
+        </Hero>
+        
+        
+      </div>
+      <div className="bg-[#101010] h-[700px] text-zinc-300 pt-20">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-[50%] px-10">
             <FormField
               control={form.control}
               name="amount"
               render={({ field }) => (
                 <FormItem>
                   <div>
-                    <FormLabel>
+                    <FormLabel className="text-2xl text-zinc-400">
                       Give me the url containing the NFT metadata you want to
-                      save as a souvenir with SoulBound NFT. I encourage you to
+                      save as a souvenir with <span className="text-white">SoulBound NFT</span>. I encourage you to
                       use Pinata Cloud.
                     </FormLabel>
                   </div>
@@ -145,8 +168,8 @@ export default function FundCard() {
             )}
           </form>
         </Form>
-      </CardContent>
-      <CardFooter className="flex flex-col gap-2 items-start h-fit">
+      </div>
+      <div className="flex flex-col gap-2 items-start h-fit bg-[#101010] h-[700px] text-zinc-300">
         <h3 className="scroll-m-20 text-lg font-semibold tracking-tight">
           Transaction status
         </h3>
@@ -181,7 +204,7 @@ export default function FundCard() {
             Transaction confirmed!
           </Badge>
         )}
-      </CardFooter>
-    </Card>
+      </div>
+    </div>
   );
 }
