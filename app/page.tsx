@@ -1,7 +1,5 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import FundMeBalanceCard from "@/components/fund-me-balance";
-import FundCard from "@/components/fund";
-import MyFund from "@/components/my-fund";
+import MintNFT from "@/components/mint";
 import logo from "@/assets/logo.png";
 import Image from "next/image";
 import SideImages from "@/components/SideImages";
@@ -15,9 +13,7 @@ export default function Home() {
           <ConnectButton />
         </div>
       </section>
-      {/* <FundMeBalanceCard />
-      <MyFund /> */}
-      <FundCard />
+      <MintNFT />
       <SideImages/>
     </div>
   );
