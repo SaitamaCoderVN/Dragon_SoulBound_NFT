@@ -64,12 +64,12 @@ export default function MintNFT() {
     try {
       await writeContract({
         abi,
-        address: "0x47cF6aCA7286EDd4B83f0c375b24bEB9aF9fA36F",
+        address: "0x6fDc7D44811bD2133A623C3bA77006172987D31f",
         functionName: "safeMint",
-        args: [values.to, values.uri], // Pass the 'to' and 'uri' values as arguments
+        args: [`0x${values.to.slice(2)}`, values.uri.toString()], // Pass the 'to' and 'uri' values as arguments
       });
       toast({
-        variant: "success",
+        variant: "default",
         title: "Transaction successful",
         description: "SoulBound NFT minted successfully!",
       });
@@ -141,7 +141,24 @@ export default function MintNFT() {
                     </FormLabel>
                   </div>
                   <div>
-                    <FormLabel className="text-md">Link URL Metadata : </FormLabel>
+                    <div>
+                     <FormLabel className="text-md">Link URL Metadata : </FormLabel> 
+                    </div>
+                    <div>
+                      <FormLabel className="text-md">
+                        We recommend using{" "}
+                        <a className="text-md font-semibold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent" href="https://pinata.cloud" target="_blank" rel="noopener noreferrer">
+                          Pinata.cloud
+                        </a>{" "}
+                        to store your NFT metadata. Read more about 
+                        {" "}<a className="text-md font-semibold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent" href="https://docs.opensea.io/docs/metadata-standards" target="_blank" rel="noopener noreferrer">
+                          Opensea's metadata standards.
+                        </a>
+                      </FormLabel>
+                    </div>
+                    <div>
+                     <FormLabel style={{fontStyle: "italic" }} className="text-xs">Example : https://peach-realistic-spider-498.mypinata.cloud/ipfs/QmTVR8KrRUAf2vJyB8Mwm1YU9ps8e7MFjGD548mf7EEY7v</FormLabel> 
+                    </div>
                     <FormControl className="my-1.5">
                       <Input
                         type="text"
