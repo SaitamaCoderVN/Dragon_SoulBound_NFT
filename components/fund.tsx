@@ -29,7 +29,6 @@ import {
   useWaitForTransactionReceipt,
   useWriteContract,
 } from "wagmi";
-import { useReadContract } from "wagmi";
 import { abi } from "./abi";
 import { parseEther } from "viem";
 import { formatEther } from "viem";
@@ -39,12 +38,16 @@ import { Hero, Highlight } from "./ui/hero";
 import MintButton from "./ui/mint-btn";
 
 const formSchema = z.object({
-  amount: z.coerce
-    .number({
-      required_error: "Amount is required",
-      invalid_type_error: "Amount must be a number",
-    })
-    .positive({ message: "Amount must be positive" }),
+  to: z.coerce
+    .string({
+      required_error: "Address is required",
+      invalid_type_error: "Address must be a string",
+    }),
+    uri: z.coerce
+    .string({
+      required_error: "uri is required",
+      invalid_type_error: "uri must be a number",
+    }),
 });
 
 export default function FundCard() {
@@ -56,14 +59,21 @@ export default function FundCard() {
     resolver: zodResolver(formSchema),
   });
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    writeContract({
-      abi,
-      address: "0x85bb6d27571C3175c81fe212c0decCA2202147b9",
-      functionName: "fund",
-      value: parseEther(values.amount.toString()),
-    });
-    if (error) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    // Convert 'to' address to appropriate format
+    try {
+      await writeContract({
+        abi,
+        address: "0x47cF6aCA7286EDd4B83f0c375b24bEB9aF9fA36F",
+        functionName: "safeMint",
+        args: [values.to, values.uri], // Pass the 'to' and 'uri' values as arguments
+      });
+      toast({
+        variant: "success",
+        title: "Transaction successful",
+        description: "SoulBound NFT minted successfully!",
+      });
+    } catch (error) {
       toast({
         variant: "destructive",
         title: "Transaction reverted",
@@ -120,7 +130,7 @@ export default function FundCard() {
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-[57%] px-10">
             <FormField
               control={form.control}
-              name="amount"
+              name="uri"
               render={({ field }) => (
                 <FormItem className="flex flex-col gap-8">
                   <div>
@@ -148,6 +158,14 @@ export default function FundCard() {
                       />
                     </FormControl>
                   </div>
+                </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="to"
+                render={({ field }) => (
+                <FormItem className="flex flex-col gap-8">
                   <div>
                     <FormLabel className="text-md ">
                       The wallet address you want to send the SoulBound NFT to:{" "}

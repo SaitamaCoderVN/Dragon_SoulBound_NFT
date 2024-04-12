@@ -1,4 +1,4 @@
-// File: /Users/msv/Documents/codespace/Mint-SoulBound-NFT-Dapp/app/page.tsx
+// File: D:\WorkSpace\Mint-SoulBound-NFT-Dapp\app\page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
