@@ -64,7 +64,7 @@ export default function MintNFT() {
     try {
       await writeContract({
         abi,
-        address: "0x6fDc7D44811bD2133A623C3bA77006172987D31f",
+        address: "0xcb4de598001bb11023C1216A9B04F230093380CE",
         functionName: "safeMint",
         args: [`0x${values.to.slice(2)}`, values.uri.toString()], // Pass the 'to' and 'uri' values as arguments
       });
