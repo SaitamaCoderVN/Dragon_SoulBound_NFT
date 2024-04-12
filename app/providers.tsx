@@ -11,6 +11,8 @@ import {
   ledgerWallet,
 } from '@rainbow-me/rainbowkit/wallets';
 import {
+  klaytn,
+  klaytnBaobab,
   mainnet,
   sepolia,
 } from 'wagmi/chains';
@@ -31,11 +33,15 @@ const config = getDefaultConfig({
   ],
   chains: [
     mainnet,
-    sepolia
+    sepolia,
+    klaytn,
+    klaytnBaobab
   ],
   transports: {
     [mainnet.id]: http('https://rpc.ankr.com/eth'),
     [sepolia.id]: http('https://rpc.ankr.com/eth_sepolia'),
+    [klaytn.id]: http('https://rpc.ankr.com/klaytn'),
+    [klaytnBaobab.id]: http('https://rpc.ankr.com/klaytn_testnet'),
   },
   ssr: true,
 });

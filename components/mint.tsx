@@ -233,7 +233,7 @@ export default function MintNFT() {
               <a
                 target="_blank"
                 className="text-blue-500 underline"
-                href={`https://sepolia.etherscan.io/tx/${hash}`}
+                href={`https://baobab.klaytnfinder.io/tx/${hash}`}
               >
                 {truncateAddress(hash)}
               </a>
