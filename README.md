@@ -19,8 +19,10 @@ We believe in transparency and collaboration. Our development process is open, w
 ## Get Started
 
 To start minting your SoulBoundNFTs and experiencing the future of digital ownership, currently we are testing on testnet. If Klaytn is provided to build the contract, we are willing to provide this service for free to everyone in the community.
-Visiting our website [here](#https://dragon-soul-bound-nft-dapp.vercel.app/).
-Contract address: 0xcb4de598001bb11023C1216A9B04F230093380CE
+
+Visit our website [here](https://dragon-soul-bound-nft-dapp.vercel.app/).
+
+Contract address: [0xcb4de598001bb11023C1216A9B04F230093380CE]([https://dragon-soul-bound-nft-dapp.vercel.app/](https://baobab.klaytnscope.com/account/0xcb4de598001bb11023C1216A9B04F230093380CE?tabId=txList))
 
 ![image](https://github.com/FucktheKingcode/Mint-SoulBound-NFT-Dapp/assets/112191530/32e7066b-0099-491d-9a54-42e2d2fe79a3)
 
