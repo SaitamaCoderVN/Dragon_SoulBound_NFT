@@ -1,37 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SoulBoundNFT Minter Dapp
 
-## Getting Started
+Welcome to the SoulBoundNFT Minter Dapp, a groundbreaking decentralized application (dapp) built on the Klaytn blockchain network. Our mission is to redefine digital ownership by enabling users to mint SoulBound Non-Fungible Tokens (NFTs) that encapsulate emotional connection and uniqueness.
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+SoulBoundNFTs transcend traditional digital assets by fostering a deep bond between creators and collectors. Our dapp leverages the robust infrastructure of the Klaytn blockchain, renowned for its scalability, security, and developer-friendly environment.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Mint SoulBoundNFTs:** Immortalize your digital creations, whether it's artwork, music, or any other form of digital content, as SoulBoundNFTs imbued with authenticity and exclusivity.
+- **Seamless Integration:** Our dapp seamlessly integrates with the Klaytn blockchain platform, offering users a hassle-free experience.
+- **Democratized Creation:** By integrating with Klaytn, we aim to democratize the creation and ownership of NFTs, providing creators and collectors with an efficient way to participate in the digital asset space.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Open Development
 
-## Learn More
+We believe in transparency and collaboration. Our development process is open, with the source code hosted on the official GitHub repository of Klaytn. This ensures accountability and invites feedback from the wider developer community, fostering innovation and continuous improvement.
 
-To learn more about Next.js, take a look at the following resources:
+## Get Started
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To start minting your SoulBoundNFTs and experiencing the future of digital ownership, currently we are testing on testnet. If Klaytn is provided to build the contract, we are willing to provide this service for free to everyone in the community.
+Visiting our website [here](#https://dragon-soul-bound-nft-dapp.vercel.app/).
+Contract address: 0xcb4de598001bb11023C1216A9B04F230093380CE
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![image](https://github.com/FucktheKingcode/Mint-SoulBound-NFT-Dapp/assets/112191530/32e7066b-0099-491d-9a54-42e2d2fe79a3)
 
-## Deploy on Vercel
+![image](https://github.com/FucktheKingcode/Mint-SoulBound-NFT-Dapp/assets/112191530/9190a1e8-267b-402f-9908-b5afa6770455)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# Mint-SoulBound-NFT-Dapp
+## Support
+
+For any inquiries or assistance, feel free to reach out to us at [coderhopham@gmail.com](mailto:coderhopham@gmail.com).
+
+Join us in revolutionizing the way we perceive and interact with digital assets in the blockchain era with the SoulBoundNFT Minter Dapp on Klaytn!
