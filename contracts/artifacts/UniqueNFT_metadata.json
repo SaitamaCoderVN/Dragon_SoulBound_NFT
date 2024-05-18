@@ -1,0 +1,2121 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "approved",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "approved",
+						"type": "bool"
+					}
+				],
+				"name": "ApprovalForAll",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "TokenChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "eth",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "sub",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CrossAddress",
+						"name": "newAdmin",
+						"type": "tuple"
+					}
+				],
+				"name": "addCollectionAdminCross",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "eth",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "sub",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CrossAddress",
+						"name": "user",
+						"type": "tuple"
+					}
+				],
+				"name": "addToCollectionAllowListCross",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "eth",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "sub",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CrossAddress",
+						"name": "user",
+						"type": "tuple"
+					}
+				],
+				"name": "allowlistedCross",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "approved",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "eth",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "sub",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CrossAddress",
+						"name": "approved",
+						"type": "tuple"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "approveCross",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "burn",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "eth",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "sub",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CrossAddress",
+						"name": "from",
+						"type": "tuple"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "burnFromCross",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "eth",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "sub",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CrossAddress",
+						"name": "newOwner",
+						"type": "tuple"
+					}
+				],
+				"name": "changeCollectionOwnerCross",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "collectionAdmins",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "eth",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "sub",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CrossAddress[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "collectionHelperAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "collectionLimits",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "enum CollectionLimitField",
+								"name": "field",
+								"type": "uint8"
+							},
+							{
+								"components": [
+									{
+										"internalType": "bool",
+										"name": "status",
+										"type": "bool"
+									},
+									{
+										"internalType": "uint256",
+										"name": "value",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct OptionUint256",
+								"name": "value",
+								"type": "tuple"
+							}
+						],
+						"internalType": "struct CollectionLimit[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "collectionNestingPermissions",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "enum CollectionPermissionField",
+								"name": "field",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bool",
+								"name": "value",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct CollectionNestingPermission[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "collectionNestingRestrictedCollectionIds",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bool",
+								"name": "token_owner",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256[]",
+								"name": "ids",
+								"type": "uint256[]"
+							}
+						],
+						"internalType": "struct CollectionNesting",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "collectionOwner",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "eth",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "sub",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CrossAddress",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string[]",
+						"name": "keys",
+						"type": "string[]"
+					}
+				],
+				"name": "collectionProperties",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "key",
+								"type": "string"
+							},
+							{
+								"internalType": "bytes",
+								"name": "value",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct Property[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "key",
+						"type": "string"
+					}
+				],
+				"name": "collectionProperty",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "collectionSponsor",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "eth",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "sub",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CrossAddress",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "confirmCollectionSponsorship",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "contractAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "crossOwnerOf",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "eth",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "sub",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CrossAddress",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string[]",
+						"name": "keys",
+						"type": "string[]"
+					}
+				],
+				"name": "deleteCollectionProperties",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string[]",
+						"name": "keys",
+						"type": "string[]"
+					}
+				],
+				"name": "deleteProperties",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "description",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getApproved",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "hasCollectionPendingSponsor",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					}
+				],
+				"name": "isApprovedForAll",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "eth",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "sub",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CrossAddress",
+						"name": "user",
+						"type": "tuple"
+					}
+				],
+				"name": "isOwnerOrAdminCross",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "mint",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "eth",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "sub",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CrossAddress",
+						"name": "to",
+						"type": "tuple"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "key",
+								"type": "string"
+							},
+							{
+								"internalType": "bytes",
+								"name": "value",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct Property[]",
+						"name": "properties",
+						"type": "tuple[]"
+					}
+				],
+				"name": "mintCross",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "tokenUri",
+						"type": "string"
+					}
+				],
+				"name": "mintWithTokenURI",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "nextTokenId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "ownerOf",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string[]",
+						"name": "keys",
+						"type": "string[]"
+					}
+				],
+				"name": "properties",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "key",
+								"type": "string"
+							},
+							{
+								"internalType": "bytes",
+								"name": "value",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct Property[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "key",
+						"type": "string"
+					}
+				],
+				"name": "property",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "eth",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "sub",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CrossAddress",
+						"name": "admin",
+						"type": "tuple"
+					}
+				],
+				"name": "removeCollectionAdminCross",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "removeCollectionSponsor",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "eth",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "sub",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CrossAddress",
+						"name": "user",
+						"type": "tuple"
+					}
+				],
+				"name": "removeFromCollectionAllowListCross",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "safeTransferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "safeTransferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "approved",
+						"type": "bool"
+					}
+				],
+				"name": "setApprovalForAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum AccessMode",
+						"name": "mode",
+						"type": "uint8"
+					}
+				],
+				"name": "setCollectionAccess",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "enum CollectionLimitField",
+								"name": "field",
+								"type": "uint8"
+							},
+							{
+								"components": [
+									{
+										"internalType": "bool",
+										"name": "status",
+										"type": "bool"
+									},
+									{
+										"internalType": "uint256",
+										"name": "value",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct OptionUint256",
+								"name": "value",
+								"type": "tuple"
+							}
+						],
+						"internalType": "struct CollectionLimit",
+						"name": "limit",
+						"type": "tuple"
+					}
+				],
+				"name": "setCollectionLimit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "mode",
+						"type": "bool"
+					}
+				],
+				"name": "setCollectionMintMode",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "enable",
+						"type": "bool"
+					}
+				],
+				"name": "setCollectionNesting",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "enable",
+						"type": "bool"
+					},
+					{
+						"internalType": "address[]",
+						"name": "collections",
+						"type": "address[]"
+					}
+				],
+				"name": "setCollectionNesting",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "key",
+								"type": "string"
+							},
+							{
+								"internalType": "bytes",
+								"name": "value",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct Property[]",
+						"name": "properties",
+						"type": "tuple[]"
+					}
+				],
+				"name": "setCollectionProperties",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "eth",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "sub",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CrossAddress",
+						"name": "sponsor",
+						"type": "tuple"
+					}
+				],
+				"name": "setCollectionSponsorCross",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "key",
+								"type": "string"
+							},
+							{
+								"internalType": "bytes",
+								"name": "value",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct Property[]",
+						"name": "properties",
+						"type": "tuple[]"
+					}
+				],
+				"name": "setProperties",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "key",
+								"type": "string"
+							},
+							{
+								"components": [
+									{
+										"internalType": "enum TokenPermissionField",
+										"name": "code",
+										"type": "uint8"
+									},
+									{
+										"internalType": "bool",
+										"name": "value",
+										"type": "bool"
+									}
+								],
+								"internalType": "struct PropertyPermission[]",
+								"name": "permissions",
+								"type": "tuple[]"
+							}
+						],
+						"internalType": "struct TokenPropertyPermission[]",
+						"name": "permissions",
+						"type": "tuple[]"
+					}
+				],
+				"name": "setTokenPropertyPermissions",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceID",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenByIndex",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenOfOwnerByIndex",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokenPropertyPermissions",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "key",
+								"type": "string"
+							},
+							{
+								"components": [
+									{
+										"internalType": "enum TokenPermissionField",
+										"name": "code",
+										"type": "uint8"
+									},
+									{
+										"internalType": "bool",
+										"name": "value",
+										"type": "bool"
+									}
+								],
+								"internalType": "struct PropertyPermission[]",
+								"name": "permissions",
+								"type": "tuple[]"
+							}
+						],
+						"internalType": "struct TokenPropertyPermission[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "eth",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "sub",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CrossAddress",
+						"name": "to",
+						"type": "tuple"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "transferCross",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "eth",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "sub",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CrossAddress",
+						"name": "from",
+						"type": "tuple"
+					},
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "eth",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "sub",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CrossAddress",
+						"name": "to",
+						"type": "tuple"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFromCross",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "uniqueCollectionType",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addCollectionAdminCross((address,uint256))": {
+					"details": "EVM selector for this function is: 0x859aa7d6,  or in textual repr: addCollectionAdminCross((address,uint256))",
+					"params": {
+						"newAdmin": "Cross account administrator address."
+					}
+				},
+				"addToCollectionAllowListCross((address,uint256))": {
+					"details": "EVM selector for this function is: 0xa0184a3a,  or in textual repr: addToCollectionAllowListCross((address,uint256))",
+					"params": {
+						"user": "User cross account address."
+					}
+				},
+				"allowlistedCross((address,uint256))": {
+					"details": "EVM selector for this function is: 0x91b6df49,  or in textual repr: allowlistedCross((address,uint256))",
+					"params": {
+						"user": "User address to check."
+					}
+				},
+				"approve(address,uint256)": {
+					"details": "The zero address indicates there is no approved address.Throws unless `msg.sender` is the current NFT owner, or an authorized  operator of the current owner.EVM selector for this function is: 0x095ea7b3,  or in textual repr: approve(address,uint256)",
+					"params": {
+						"approved": "The new approved NFT controller",
+						"tokenId": "The NFT to approve"
+					}
+				},
+				"approveCross((address,uint256),uint256)": {
+					"details": "The zero address indicates there is no approved address.Throws unless `msg.sender` is the current NFT owner, or an authorized  operator of the current owner.EVM selector for this function is: 0x0ecd0ab0,  or in textual repr: approveCross((address,uint256),uint256)",
+					"params": {
+						"approved": "The new substrate address approved NFT controller",
+						"tokenId": "The NFT to approve"
+					}
+				},
+				"balanceOf(address)": {
+					"details": "NFTs assigned to the zero address are considered invalid, and this  function throws for queries about the zero address.EVM selector for this function is: 0x70a08231,  or in textual repr: balanceOf(address)",
+					"params": {
+						"owner": "An address for whom to query the balance"
+					},
+					"returns": {
+						"_0": "The number of NFTs owned by `owner`, possibly zero"
+					}
+				},
+				"burn(uint256)": {
+					"details": "Throws unless `msg.sender` is the current NFT owner, or an authorized  operator of the current owner.EVM selector for this function is: 0x42966c68,  or in textual repr: burn(uint256)",
+					"params": {
+						"tokenId": "The NFT to approve"
+					}
+				},
+				"burnFromCross((address,uint256),uint256)": {
+					"details": "Throws unless `msg.sender` is the current owner or an authorized  operator for this NFT. Throws if `from` is not the current owner. Throws  if `to` is the zero address. Throws if `tokenId` is not a valid NFT.EVM selector for this function is: 0xbb2f5a58,  or in textual repr: burnFromCross((address,uint256),uint256)",
+					"params": {
+						"from": "The current owner of the NFT",
+						"tokenId": "The NFT to transfer"
+					}
+				},
+				"changeCollectionOwnerCross((address,uint256))": {
+					"details": "Owner can be changed only by current ownerEVM selector for this function is: 0x6496c497,  or in textual repr: changeCollectionOwnerCross((address,uint256))",
+					"params": {
+						"newOwner": "new owner cross account"
+					}
+				},
+				"collectionAdmins()": {
+					"details": "EVM selector for this function is: 0x5813216b,  or in textual repr: collectionAdmins()",
+					"returns": {
+						"_0": "Vector of tuples with admins address and his substrate mirror. If address is canonical then substrate mirror is zero and vice versa."
+					}
+				},
+				"collectionHelperAddress()": {
+					"details": "EVM selector for this function is: 0x1896cce6,  or in textual repr: collectionHelperAddress()"
+				},
+				"collectionLimits()": {
+					"details": "EVM selector for this function is: 0xf63bc572,  or in textual repr: collectionLimits()",
+					"returns": {
+						"_0": "Array of collection limits"
+					}
+				},
+				"collectionNestingPermissions()": {
+					"details": "EVM selector for this function is: 0x5b2eaf4b,  or in textual repr: collectionNestingPermissions()"
+				},
+				"collectionNestingRestrictedCollectionIds()": {
+					"details": "EVM selector for this function is: 0x22d25bfe,  or in textual repr: collectionNestingRestrictedCollectionIds()"
+				},
+				"collectionOwner()": {
+					"details": "EVM selector for this function is: 0xdf727d3b,  or in textual repr: collectionOwner()",
+					"returns": {
+						"_0": "Tuble with sponsor address and his substrate mirror. If address is canonical then substrate mirror is zero and vice versa."
+					}
+				},
+				"collectionProperties(string[])": {
+					"details": "EVM selector for this function is: 0x285fb8e6,  or in textual repr: collectionProperties(string[])",
+					"params": {
+						"keys": "Properties keys. Empty keys for all propertyes."
+					},
+					"returns": {
+						"_0": "Vector of properties key/value pairs."
+					}
+				},
+				"collectionProperty(string)": {
+					"details": "Throws error if key not found.EVM selector for this function is: 0xcf24fd6d,  or in textual repr: collectionProperty(string)",
+					"params": {
+						"key": "Property key."
+					},
+					"returns": {
+						"_0": "bytes The property corresponding to the key."
+					}
+				},
+				"collectionSponsor()": {
+					"details": "EVM selector for this function is: 0x6ec0a9f1,  or in textual repr: collectionSponsor()",
+					"returns": {
+						"_0": "Tuble with sponsor address and his substrate mirror. If there is no confirmed sponsor error \"Contract has no sponsor\" throw."
+					}
+				},
+				"confirmCollectionSponsorship()": {
+					"details": "After setting the sponsor for the collection, it must be confirmed with this function.EVM selector for this function is: 0x3c50e97a,  or in textual repr: confirmCollectionSponsorship()"
+				},
+				"contractAddress()": {
+					"details": "EVM selector for this function is: 0xf6b4dfb4,  or in textual repr: contractAddress()"
+				},
+				"crossOwnerOf(uint256)": {
+					"details": "EVM selector for this function is: 0x2b29dace,  or in textual repr: crossOwnerOf(uint256)",
+					"params": {
+						"tokenId": "Id for the token."
+					}
+				},
+				"deleteCollectionProperties(string[])": {
+					"details": "EVM selector for this function is: 0xee206ee3,  or in textual repr: deleteCollectionProperties(string[])",
+					"params": {
+						"keys": "Properties keys."
+					}
+				},
+				"deleteProperties(uint256,string[])": {
+					"details": "Throws error if `msg.sender` has no permission to edit the property.EVM selector for this function is: 0xc472d371,  or in textual repr: deleteProperties(uint256,string[])",
+					"params": {
+						"keys": "Properties key.",
+						"tokenId": "ID of the token."
+					}
+				},
+				"description()": {
+					"details": "EVM selector for this function is: 0x7284e416,  or in textual repr: description()"
+				},
+				"getApproved(uint256)": {
+					"details": "Throws if `tokenId` is not a valid NFTEVM selector for this function is: 0x081812fc,  or in textual repr: getApproved(uint256)",
+					"params": {
+						"tokenId": "The NFT to find the approved address for"
+					},
+					"returns": {
+						"_0": "The approved address for this NFT, or the zero address if there is none"
+					}
+				},
+				"hasCollectionPendingSponsor()": {
+					"details": "EVM selector for this function is: 0x058ac185,  or in textual repr: hasCollectionPendingSponsor()"
+				},
+				"isApprovedForAll(address,address)": {
+					"details": "EVM selector for this function is: 0xe985e9c5,  or in textual repr: isApprovedForAll(address,address)"
+				},
+				"isOwnerOrAdminCross((address,uint256))": {
+					"details": "EVM selector for this function is: 0x3e75a905,  or in textual repr: isOwnerOrAdminCross((address,uint256))",
+					"params": {
+						"user": "User cross account to verify"
+					},
+					"returns": {
+						"_0": "\"true\" if account is the owner or admin"
+					}
+				},
+				"mint(address)": {
+					"details": "EVM selector for this function is: 0x6a627842,  or in textual repr: mint(address)",
+					"params": {
+						"to": "The new owner"
+					},
+					"returns": {
+						"_0": "uint256 The id of the newly minted token"
+					}
+				},
+				"mintCross((address,uint256),(string,bytes)[])": {
+					"details": "EVM selector for this function is: 0xb904db03,  or in textual repr: mintCross((address,uint256),(string,bytes)[])",
+					"params": {
+						"properties": "Properties of minted token",
+						"to": "The new owner crossAccountId"
+					},
+					"returns": {
+						"_0": "uint256 The id of the newly minted token"
+					}
+				},
+				"mintWithTokenURI(address,string)": {
+					"details": "EVM selector for this function is: 0x45c17782,  or in textual repr: mintWithTokenURI(address,string)",
+					"params": {
+						"to": "The new owner",
+						"tokenUri": "Token URI that would be stored in the NFT properties"
+					},
+					"returns": {
+						"_0": "uint256 The id of the newly minted token"
+					}
+				},
+				"name()": {
+					"details": "EVM selector for this function is: 0x06fdde03,  or in textual repr: name()"
+				},
+				"nextTokenId()": {
+					"details": "EVM selector for this function is: 0x75794a3c,  or in textual repr: nextTokenId()"
+				},
+				"ownerOf(uint256)": {
+					"details": "NFTs assigned to zero address are considered invalid, and queries  about them do throw.EVM selector for this function is: 0x6352211e,  or in textual repr: ownerOf(uint256)",
+					"params": {
+						"tokenId": "The identifier for an NFT"
+					},
+					"returns": {
+						"_0": "The address of the owner of the NFT"
+					}
+				},
+				"properties(uint256,string[])": {
+					"details": "EVM selector for this function is: 0xe07ede7e,  or in textual repr: properties(uint256,string[])",
+					"params": {
+						"keys": "Properties keys. Empty keys for all propertyes.",
+						"tokenId": "Id for the token."
+					},
+					"returns": {
+						"_0": "Vector of properties key/value pairs."
+					}
+				},
+				"property(uint256,string)": {
+					"details": "Throws error if key not foundEVM selector for this function is: 0x7228c327,  or in textual repr: property(uint256,string)",
+					"params": {
+						"key": "Property key.",
+						"tokenId": "ID of the token."
+					},
+					"returns": {
+						"_0": "Property value bytes"
+					}
+				},
+				"removeCollectionAdminCross((address,uint256))": {
+					"details": "EVM selector for this function is: 0x6c0cd173,  or in textual repr: removeCollectionAdminCross((address,uint256))",
+					"params": {
+						"admin": "Cross account administrator address."
+					}
+				},
+				"removeCollectionSponsor()": {
+					"details": "EVM selector for this function is: 0x6e0326a3,  or in textual repr: removeCollectionSponsor()"
+				},
+				"removeFromCollectionAllowListCross((address,uint256))": {
+					"details": "EVM selector for this function is: 0x09ba452a,  or in textual repr: removeFromCollectionAllowListCross((address,uint256))",
+					"params": {
+						"user": "User cross account address."
+					}
+				},
+				"safeTransferFrom(address,address,uint256)": {
+					"details": "Not implementedEVM selector for this function is: 0x42842e0e,  or in textual repr: safeTransferFrom(address,address,uint256)"
+				},
+				"safeTransferFrom(address,address,uint256,bytes)": {
+					"details": "Not implementedEVM selector for this function is: 0xb88d4fde,  or in textual repr: safeTransferFrom(address,address,uint256,bytes)"
+				},
+				"setApprovalForAll(address,bool)": {
+					"details": "EVM selector for this function is: 0xa22cb465,  or in textual repr: setApprovalForAll(address,bool)",
+					"params": {
+						"approved": "Should operator status be granted or revoked?",
+						"operator": "Operator"
+					}
+				},
+				"setCollectionAccess(uint8)": {
+					"details": "EVM selector for this function is: 0x41835d4c,  or in textual repr: setCollectionAccess(uint8)",
+					"params": {
+						"mode": "Access mode"
+					}
+				},
+				"setCollectionLimit((uint8,(bool,uint256)))": {
+					"details": "Throws error if limit not found.EVM selector for this function is: 0x2316ee74,  or in textual repr: setCollectionLimit((uint8,(bool,uint256)))",
+					"params": {
+						"limit": "Some limit."
+					}
+				},
+				"setCollectionMintMode(bool)": {
+					"details": "EVM selector for this function is: 0x00018e84,  or in textual repr: setCollectionMintMode(bool)",
+					"params": {
+						"mode": "Enable if \"true\"."
+					}
+				},
+				"setCollectionNesting(bool)": {
+					"details": "EVM selector for this function is: 0x112d4586,  or in textual repr: setCollectionNesting(bool)",
+					"params": {
+						"enable": "If \"true\" degenerates to nesting: 'Owner' else to nesting: 'Disabled'"
+					}
+				},
+				"setCollectionNesting(bool,address[])": {
+					"details": "EVM selector for this function is: 0x64872396,  or in textual repr: setCollectionNesting(bool,address[])",
+					"params": {
+						"collections": "Addresses of collections that will be available for nesting.",
+						"enable": "If \"true\" degenerates to nesting: {OwnerRestricted: [1, 2, 3]} else to nesting: 'Disabled'"
+					}
+				},
+				"setCollectionProperties((string,bytes)[])": {
+					"details": "EVM selector for this function is: 0x50b26b2a,  or in textual repr: setCollectionProperties((string,bytes)[])",
+					"params": {
+						"properties": "Vector of properties key/value pair."
+					}
+				},
+				"setCollectionSponsorCross((address,uint256))": {
+					"details": "In order for sponsorship to work, it must be confirmed on behalf of the sponsor.EVM selector for this function is: 0x84a1d5a8,  or in textual repr: setCollectionSponsorCross((address,uint256))",
+					"params": {
+						"sponsor": "Cross account address of the sponsor from whose account funds will be debited for operations with the contract."
+					}
+				},
+				"setProperties(uint256,(string,bytes)[])": {
+					"details": "Throws error if `msg.sender` has no permission to edit the property.EVM selector for this function is: 0x14ed3a6e,  or in textual repr: setProperties(uint256,(string,bytes)[])",
+					"params": {
+						"properties": "settable properties",
+						"tokenId": "ID of the token."
+					}
+				},
+				"setTokenPropertyPermissions((string,(uint8,bool)[])[])": {
+					"details": "Throws error if `msg.sender` is not admin or owner of the collection.EVM selector for this function is: 0xbd92983a,  or in textual repr: setTokenPropertyPermissions((string,(uint8,bool)[])[])",
+					"params": {
+						"permissions": "Permissions for keys."
+					}
+				},
+				"symbol()": {
+					"details": "EVM selector for this function is: 0x95d89b41,  or in textual repr: symbol()"
+				},
+				"tokenByIndex(uint256)": {
+					"details": "EVM selector for this function is: 0x4f6ccce7,  or in textual repr: tokenByIndex(uint256)",
+					"params": {
+						"index": "A counter less than `totalSupply()`"
+					},
+					"returns": {
+						"_0": "The token identifier for the `index`th NFT,  (sort order not specified)"
+					}
+				},
+				"tokenOfOwnerByIndex(address,uint256)": {
+					"details": "Not implementedEVM selector for this function is: 0x2f745c59,  or in textual repr: tokenOfOwnerByIndex(address,uint256)"
+				},
+				"tokenPropertyPermissions()": {
+					"details": "EVM selector for this function is: 0xf23d7790,  or in textual repr: tokenPropertyPermissions()"
+				},
+				"tokenURI(uint256)": {
+					"details": "If the token has a `url` property and it is not empty, it is returned.  Else If the collection does not have a property with key `schemaName` or its value is not equal to `ERC721Metadata`, it return an error `tokenURI not set`.  If the collection property `baseURI` is empty or absent, return \"\" (empty string)  otherwise, if token property `suffix` present and is non-empty, return concatenation of baseURI and suffix  otherwise, return concatenation of `baseURI` and stringified token id (decimal stringifying, without paddings).EVM selector for this function is: 0xc87b56dd,  or in textual repr: tokenURI(uint256)",
+					"returns": {
+						"_0": "token's const_metadata"
+					}
+				},
+				"totalSupply()": {
+					"details": "EVM selector for this function is: 0x18160ddd,  or in textual repr: totalSupply()",
+					"returns": {
+						"_0": "A count of valid NFTs tracked by this contract, where each one of  them has an assigned and queryable owner not equal to the zero address"
+					}
+				},
+				"transfer(address,uint256)": {
+					"details": "Throws unless `msg.sender` is the current owner. Throws if `to`  is the zero address. Throws if `tokenId` is not a valid NFT.EVM selector for this function is: 0xa9059cbb,  or in textual repr: transfer(address,uint256)",
+					"params": {
+						"to": "The new owner",
+						"tokenId": "The NFT to transfer"
+					}
+				},
+				"transferCross((address,uint256),uint256)": {
+					"details": "Throws unless `msg.sender` is the current owner. Throws if `to`  is the zero address. Throws if `tokenId` is not a valid NFT.EVM selector for this function is: 0x2ada85ff,  or in textual repr: transferCross((address,uint256),uint256)",
+					"params": {
+						"to": "The new owner",
+						"tokenId": "The NFT to transfer"
+					}
+				},
+				"transferFrom(address,address,uint256)": {
+					"details": "Throws unless `msg.sender` is the current owner or an authorized  operator for this NFT. Throws if `from` is not the current owner. Throws  if `to` is the zero address. Throws if `tokenId` is not a valid NFT.EVM selector for this function is: 0x23b872dd,  or in textual repr: transferFrom(address,address,uint256)",
+					"params": {
+						"from": "The current owner of the NFT",
+						"to": "The new owner",
+						"tokenId": "The NFT to transfer"
+					}
+				},
+				"transferFromCross((address,uint256),(address,uint256),uint256)": {
+					"details": "Throws unless `msg.sender` is the current owner. Throws if `to`  is the zero address. Throws if `tokenId` is not a valid NFT.EVM selector for this function is: 0xd5cf430b,  or in textual repr: transferFromCross((address,uint256),(address,uint256),uint256)",
+					"params": {
+						"from": "Cross acccount address of current owner",
+						"to": "Cross acccount address of new owner",
+						"tokenId": "The NFT to transfer"
+					}
+				},
+				"uniqueCollectionType()": {
+					"details": "EVM selector for this function is: 0xd34b55b8,  or in textual repr: uniqueCollectionType()",
+					"returns": {
+						"_0": "`Fungible` or `NFT` or `ReFungible`"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addCollectionAdminCross((address,uint256))": {
+					"notice": "Add collection admin."
+				},
+				"addToCollectionAllowListCross((address,uint256))": {
+					"notice": "Add user to allowed list."
+				},
+				"allowlistedCross((address,uint256))": {
+					"notice": "Checks that user allowed to operate with collection."
+				},
+				"approve(address,uint256)": {
+					"notice": "Set or reaffirm the approved address for an NFT"
+				},
+				"approveCross((address,uint256),uint256)": {
+					"notice": "Set or reaffirm the approved address for an NFT"
+				},
+				"balanceOf(address)": {
+					"notice": "Count all NFTs assigned to an owner"
+				},
+				"burn(uint256)": {
+					"notice": "Burns a specific ERC721 token."
+				},
+				"burnFromCross((address,uint256),uint256)": {
+					"notice": "Burns a specific ERC721 token."
+				},
+				"changeCollectionOwnerCross((address,uint256))": {
+					"notice": "Changes collection owner to another account"
+				},
+				"collectionAdmins()": {
+					"notice": "Get collection administrators"
+				},
+				"collectionHelperAddress()": {
+					"notice": "Returns collection helper contract address"
+				},
+				"collectionLimits()": {
+					"notice": "Get current collection limits."
+				},
+				"collectionNestingPermissions()": {
+					"notice": "Returns permissions for a collection"
+				},
+				"collectionNestingRestrictedCollectionIds()": {
+					"notice": "Returns nesting for a collection"
+				},
+				"collectionOwner()": {
+					"notice": "Get collection owner."
+				},
+				"collectionProperties(string[])": {
+					"notice": "Get collection properties."
+				},
+				"collectionProperty(string)": {
+					"notice": "Get collection property."
+				},
+				"collectionSponsor()": {
+					"notice": "Get current sponsor."
+				},
+				"confirmCollectionSponsorship()": {
+					"notice": "Collection sponsorship confirmation."
+				},
+				"contractAddress()": {
+					"notice": "Get contract address."
+				},
+				"crossOwnerOf(uint256)": {
+					"notice": "Returns the owner (in cross format) of the token."
+				},
+				"deleteCollectionProperties(string[])": {
+					"notice": "Delete collection properties."
+				},
+				"deleteProperties(uint256,string[])": {
+					"notice": "Delete token properties value."
+				},
+				"description()": {
+					"notice": "A description for the collection."
+				},
+				"getApproved(uint256)": {
+					"notice": "Get the approved address for a single NFT"
+				},
+				"hasCollectionPendingSponsor()": {
+					"notice": "Whether there is a pending sponsor."
+				},
+				"isApprovedForAll(address,address)": {
+					"notice": "Tells whether the given `owner` approves the `operator`."
+				},
+				"isOwnerOrAdminCross((address,uint256))": {
+					"notice": "Check that account is the owner or admin of the collection"
+				},
+				"mint(address)": {
+					"notice": "Function to mint a token."
+				},
+				"mintCross((address,uint256),(string,bytes)[])": {
+					"notice": "Function to mint a token."
+				},
+				"mintWithTokenURI(address,string)": {
+					"notice": "Function to mint token with the given tokenUri."
+				},
+				"name()": {
+					"notice": "A descriptive name for a collection of NFTs in this contract"
+				},
+				"nextTokenId()": {
+					"notice": "Returns next free NFT ID."
+				},
+				"ownerOf(uint256)": {
+					"notice": "Find the owner of an NFT"
+				},
+				"properties(uint256,string[])": {
+					"notice": "Returns the token properties."
+				},
+				"property(uint256,string)": {
+					"notice": "Get token property value."
+				},
+				"removeCollectionAdminCross((address,uint256))": {
+					"notice": "Remove collection admin."
+				},
+				"removeCollectionSponsor()": {
+					"notice": "Remove collection sponsor."
+				},
+				"removeFromCollectionAllowListCross((address,uint256))": {
+					"notice": "Remove user from allowed list."
+				},
+				"setApprovalForAll(address,bool)": {
+					"notice": "Sets or unsets the approval of a given operator. The `operator` is allowed to transfer all tokens of the `caller` on their behalf."
+				},
+				"setCollectionAccess(uint8)": {
+					"notice": "Set the collection access method."
+				},
+				"setCollectionLimit((uint8,(bool,uint256)))": {
+					"notice": "Set limits for the collection."
+				},
+				"setCollectionMintMode(bool)": {
+					"notice": "Switch permission for minting."
+				},
+				"setCollectionNesting(bool)": {
+					"notice": "Toggle accessibility of collection nesting."
+				},
+				"setCollectionNesting(bool,address[])": {
+					"notice": "Toggle accessibility of collection nesting."
+				},
+				"setCollectionProperties((string,bytes)[])": {
+					"notice": "Set collection properties."
+				},
+				"setCollectionSponsorCross((address,uint256))": {
+					"notice": "Set the sponsor of the collection."
+				},
+				"setProperties(uint256,(string,bytes)[])": {
+					"notice": "Set token properties value."
+				},
+				"setTokenPropertyPermissions((string,(uint8,bool)[])[])": {
+					"notice": "Set permissions for token property."
+				},
+				"symbol()": {
+					"notice": "An abbreviated name for NFTs in this contract"
+				},
+				"tokenByIndex(uint256)": {
+					"notice": "Enumerate valid NFTs"
+				},
+				"tokenPropertyPermissions()": {
+					"notice": "Get permissions for token properties."
+				},
+				"tokenURI(uint256)": {
+					"notice": "A distinct Uniform Resource Identifier (URI) for a given asset."
+				},
+				"totalSupply()": {
+					"notice": "Count NFTs tracked by this contract"
+				},
+				"transfer(address,uint256)": {
+					"notice": "Transfer ownership of an NFT"
+				},
+				"transferCross((address,uint256),uint256)": {
+					"notice": "Transfer ownership of an NFT"
+				},
+				"transferFrom(address,address,uint256)": {
+					"notice": "Transfer ownership of an NFT -- THE CALLER IS RESPONSIBLE  TO CONFIRM THAT `to` IS CAPABLE OF RECEIVING NFTS OR ELSE  THEY MAY BE PERMANENTLY LOST"
+				},
+				"transferFromCross((address,uint256),(address,uint256),uint256)": {
+					"notice": "Transfer ownership of an NFT from cross account address to cross account address"
+				},
+				"uniqueCollectionType()": {
+					"notice": "Returns collection type"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/UniqueNFT.sol": "UniqueNFT"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/UniqueNFT.sol": {
+			"keccak256": "0xc148492110ebeaac4699ffeac8dd74d1629204d70948653256ded15c2b1f5d06",
+			"license": "OTHER",
+			"urls": [
+				"bzz-raw://dc6f720c79f4c8807e4043592ebaa23566e400d79d312bf5afa4e6a4cae8ff82",
+				"dweb:/ipfs/QmNkDq6rVBiDEw5NpP3JfjheUqEY6QAy9Vc7emGsnvr8X8"
+			]
+		}
+	},
+	"version": 1
+}

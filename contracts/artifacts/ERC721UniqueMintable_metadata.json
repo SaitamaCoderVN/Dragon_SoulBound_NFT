@@ -1,0 +1,137 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "mint",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "tokenUri",
+						"type": "string"
+					}
+				],
+				"name": "mintWithTokenURI",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceID",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "the ERC-165 identifier for this interface is 0x3fd94ea6",
+			"kind": "dev",
+			"methods": {
+				"mint(address)": {
+					"details": "EVM selector for this function is: 0x6a627842,  or in textual repr: mint(address)",
+					"params": {
+						"to": "The new owner"
+					},
+					"returns": {
+						"_0": "uint256 The id of the newly minted token"
+					}
+				},
+				"mintWithTokenURI(address,string)": {
+					"details": "EVM selector for this function is: 0x45c17782,  or in textual repr: mintWithTokenURI(address,string)",
+					"params": {
+						"to": "The new owner",
+						"tokenUri": "Token URI that would be stored in the NFT properties"
+					},
+					"returns": {
+						"_0": "uint256 The id of the newly minted token"
+					}
+				}
+			},
+			"title": "ERC721 minting logic.",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"mint(address)": {
+					"notice": "Function to mint a token."
+				},
+				"mintWithTokenURI(address,string)": {
+					"notice": "Function to mint token with the given tokenUri."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/UniqueNFT.sol": "ERC721UniqueMintable"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/UniqueNFT.sol": {
+			"keccak256": "0xc148492110ebeaac4699ffeac8dd74d1629204d70948653256ded15c2b1f5d06",
+			"license": "OTHER",
+			"urls": [
+				"bzz-raw://dc6f720c79f4c8807e4043592ebaa23566e400d79d312bf5afa4e6a4cae8ff82",
+				"dweb:/ipfs/QmNkDq6rVBiDEw5NpP3JfjheUqEY6QAy9Vc7emGsnvr8X8"
+			]
+		}
+	},
+	"version": 1
+}

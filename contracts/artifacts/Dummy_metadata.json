@@ -1,0 +1,46 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "common stubs holder",
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/UniqueNFT.sol": "Dummy"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/UniqueNFT.sol": {
+			"keccak256": "0xc148492110ebeaac4699ffeac8dd74d1629204d70948653256ded15c2b1f5d06",
+			"license": "OTHER",
+			"urls": [
+				"bzz-raw://dc6f720c79f4c8807e4043592ebaa23566e400d79d312bf5afa4e6a4cae8ff82",
+				"dweb:/ipfs/QmNkDq6rVBiDEw5NpP3JfjheUqEY6QAy9Vc7emGsnvr8X8"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,97 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceID",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "See https://eips.ethereum.org/EIPS/eip-721the ERC-165 identifier for this interface is 0x5b5e139f",
+			"kind": "dev",
+			"methods": {
+				"tokenURI(uint256)": {
+					"details": "If the token has a `url` property and it is not empty, it is returned.  Else If the collection does not have a property with key `schemaName` or its value is not equal to `ERC721Metadata`, it return an error `tokenURI not set`.  If the collection property `baseURI` is empty or absent, return \"\" (empty string)  otherwise, if token property `suffix` present and is non-empty, return concatenation of baseURI and suffix  otherwise, return concatenation of `baseURI` and stringified token id (decimal stringifying, without paddings).EVM selector for this function is: 0xc87b56dd,  or in textual repr: tokenURI(uint256)",
+					"returns": {
+						"_0": "token's const_metadata"
+					}
+				}
+			},
+			"title": "ERC-721 Non-Fungible Token Standard, optional metadata extension",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"tokenURI(uint256)": {
+					"notice": "A distinct Uniform Resource Identifier (URI) for a given asset."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/UniqueNFT.sol": "ERC721Metadata"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/UniqueNFT.sol": {
+			"keccak256": "0xc148492110ebeaac4699ffeac8dd74d1629204d70948653256ded15c2b1f5d06",
+			"license": "OTHER",
+			"urls": [
+				"bzz-raw://dc6f720c79f4c8807e4043592ebaa23566e400d79d312bf5afa4e6a4cae8ff82",
+				"dweb:/ipfs/QmNkDq6rVBiDEw5NpP3JfjheUqEY6QAy9Vc7emGsnvr8X8"
+			]
+		}
+	},
+	"version": 1
+}

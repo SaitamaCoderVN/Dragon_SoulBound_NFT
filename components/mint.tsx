@@ -36,21 +36,22 @@ import { Badge } from "@/components/ui/badge";
 import { Loader2, Check } from "lucide-react";
 import { Hero, Highlight } from "./ui/hero";
 import MintButton from "./ui/mint-btn";
+import dynamic from "next/dynamic";
+
+const CONTRACT_ADDRESS_BAOBAB = "0x4A1dc90ca16d10c59c59f84365600F60CDAC74B9";
 
 const formSchema = z.object({
-  to: z.coerce
-    .string({
-      required_error: "Address is required",
-      invalid_type_error: "Address must be a string",
-    }),
-    uri: z.coerce
-    .string({
-      required_error: "uri is required",
-      invalid_type_error: "uri must be a number",
-    }),
+  to: z.coerce.string({
+    required_error: "Address is required",
+    invalid_type_error: "Address must be a string",
+  }),
+  uri: z.coerce.string({
+    required_error: "uri is required",
+    invalid_type_error: "uri must be a number",
+  }),
 });
 
-export default function MintNFT() {
+function MintNFT() {
   const { toast } = useToast();
   const { data: hash, error, isPending, writeContract } = useWriteContract();
 
@@ -64,7 +65,7 @@ export default function MintNFT() {
     try {
       await writeContract({
         abi,
-        address: "0xcb4de598001bb11023C1216A9B04F230093380CE",
+        address: CONTRACT_ADDRESS_BAOBAB,
         functionName: "safeMint",
         args: [`0x${values.to.slice(2)}`, values.uri.toString()], // Pass the 'to' and 'uri' values as arguments
       });
@@ -95,39 +96,41 @@ export default function MintNFT() {
     <div className="w-full row-start-2">
       <div>
         <Hero className="">
-        <motion.h1
-        initial={{
-          opacity: 0,
-          y: 20,
-        }}
-        animate={{
-          opacity: 1,
-          y: [20, -5, 0],
-        }}
-        transition={{
-          duration: 0.5,
-          ease: [0.4, 0.0, 0.2, 1],
-        }}
-        className="text-xl px-4 md:text-xl lg:text-xl font-semibold text-neutral-700 dark:text-zinc-400 max-w-4xl leading-relaxed lg:leading-snug text-left mx-auto"
-      >
-        <Highlight className="mb-2.5  text-7xl -top-9 font-bold">
-        Mint SoulBound NFT
-        </Highlight>
-        {/* break line */} <br />
-        The <span className="text-white">SoulBoundNFT</span>  minter dapp will leverage the robust infrastructure
-          of the Klaytn blockchain, renowned for its scalability, security, and
-          developer-friendly environment. Through this dapp, users will have the
-          power to immortalize their digital creations, whether it be artwork,
-          music, or any other form of digital content, as SoulBoundNFTs, imbued
-          with a sense of authenticity and exclusivity.
-      </motion.h1>
+          <motion.h1
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{
+              opacity: 1,
+              y: [20, -5, 0],
+            }}
+            transition={{
+              duration: 0.5,
+              ease: [0.4, 0.0, 0.2, 1],
+            }}
+            className="text-xl px-4 md:text-xl lg:text-xl font-semibold text-neutral-700 dark:text-zinc-400 max-w-4xl leading-relaxed lg:leading-snug text-left mx-auto"
+          >
+            <Highlight className="mb-2.5 text-7xl -top-9 font-bold">
+              Mint SoulBound NFT
+            </Highlight>
+            {/* break line */} <br />
+            The <span className="text-white">SoulBoundNFT</span> minter dapp
+            will leverage the robust infrastructure of the Klaytn blockchain,
+            renowned for its scalability, security, and developer-friendly
+            environment. Through this dapp, users will have the power to
+            immortalize their digital creations, whether it be artwork, music,
+            or any other form of digital content, as SoulBoundNFTs, imbued with
+            a sense of authenticity and exclusivity.
+          </motion.h1>
         </Hero>
-        
-        
       </div>
       <div className="bg-[#101010] h-[700px] text-zinc-300 pt-20">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-[57%] px-10">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-8 w-[57%] px-10"
+          >
             <FormField
               control={form.control}
               name="uri"
@@ -136,28 +139,47 @@ export default function MintNFT() {
                   <div>
                     <FormLabel className="text-4xl text-zinc-400">
                       Give me the url containing the NFT metadata you want to
-                      save as a souvenir with <span className="text-white">SoulBound NFT</span>. I encourage you to
-                      use Pinata Cloud.
+                      save as a souvenir with{" "}
+                      <span className="text-white">SoulBound NFT</span>. I
+                      encourage you to use Pinata Cloud.
                     </FormLabel>
                   </div>
                   <div>
                     <div>
-                     <FormLabel className="text-md">Link URL Metadata : </FormLabel> 
+                      <FormLabel className="text-md">
+                        Link URL Metadata :{" "}
+                      </FormLabel>
                     </div>
                     <div>
                       <FormLabel className="text-md">
                         We recommend using{" "}
-                        <a className="text-md font-semibold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent" href="https://pinata.cloud" target="_blank" rel="noopener noreferrer">
+                        <a
+                          className="text-md font-semibold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent"
+                          href="https://pinata.cloud"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           Pinata.cloud
                         </a>{" "}
-                        to store your NFT metadata. Read more about 
-                        {" "}<a className="text-md font-semibold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent" href="https://docs.opensea.io/docs/metadata-standards" target="_blank" rel="noopener noreferrer">
+                        to store your NFT metadata. Read more about{" "}
+                        <a
+                          className="text-md font-semibold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent"
+                          href="https://docs.opensea.io/docs/metadata-standards"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           Opensea's metadata standards.
                         </a>
                       </FormLabel>
                     </div>
                     <div>
-                     <FormLabel style={{fontStyle: "italic" }} className="text-xs">Example : https://peach-realistic-spider-498.mypinata.cloud/ipfs/QmTVR8KrRUAf2vJyB8Mwm1YU9ps8e7MFjGD548mf7EEY7v</FormLabel> 
+                      <FormLabel
+                        style={{ fontStyle: "italic" }}
+                        className="text-xs"
+                      >
+                        Example :
+                        https://peach-realistic-spider-498.mypinata.cloud/ipfs/Qmdpt98UhmExzU29MFfsYTX2ph47UqU82Wu9BcRyZAFfSJ
+                      </FormLabel>
                     </div>
                     <FormControl className="my-1.5">
                       <Input
@@ -176,12 +198,12 @@ export default function MintNFT() {
                     </FormControl>
                   </div>
                 </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="to"
-                render={({ field }) => (
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="to"
+              render={({ field }) => (
                 <FormItem className="flex flex-col gap-8">
                   <div>
                     <FormLabel className="text-md ">
@@ -203,9 +225,9 @@ export default function MintNFT() {
                       />
                     </FormControl>
                   </div>
-                  <FormDescription
-                  className="text-md font-semibold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent"
-                  >Mint your SoulBound NFT now</FormDescription>
+                  <FormDescription className="text-md font-semibold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">
+                    Mint your SoulBound NFT now
+                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -216,14 +238,13 @@ export default function MintNFT() {
                 Please wait
               </Button>
             ) : (
-              <MintButton/>
+              <MintButton />
             )}
           </form>
         </Form>
       </div>
       <div className="flex flex-col gap-2 items-start h-fit bg-[#101010] text-zinc-300">
         <div className="bg-zinc-700 ml-10 mb-10 p-7 rounded-xl">
-
           <h3 className="scroll-m-20 text-lg font-semibold tracking-tight">
             Transaction status
           </h3>
@@ -263,3 +284,7 @@ export default function MintNFT() {
     </div>
   );
 }
+
+export default dynamic(() => Promise.resolve(MintNFT), {
+  ssr: false,
+});
