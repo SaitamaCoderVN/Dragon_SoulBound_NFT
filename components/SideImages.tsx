@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { useAccount, useReadContract, useReadContracts } from "wagmi";
 import dynamic from "next/dynamic";
