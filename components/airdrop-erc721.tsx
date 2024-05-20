@@ -39,8 +39,7 @@ import { Loader2, Check } from "lucide-react";
 import { abi } from "./abi";
 import { erc721Abi } from "./erc721-abi";
 import { useChainId } from "wagmi";
-
-const CONTRACT_ADDRESS_BAOBAB = "0x4A1dc90ca16d10c59c59f84365600F60CDAC74B9";
+import { CONTRACT_ADDRESS_BAOBAB, CONTRACT_ADDRESS_CYPRESS } from "./contract";
 
 const formSchema = z.object({
   addresses: z.string(),
@@ -76,7 +75,7 @@ export function AirdropNFTs() {
           : undefined,
         args: [
           account.address as `0x${string}`,
-          chainId === 1001 ? CONTRACT_ADDRESS_BAOBAB : CONTRACT_ADDRESS_BAOBAB,
+          chainId === 1001 ? CONTRACT_ADDRESS_BAOBAB : CONTRACT_ADDRESS_CYPRESS,
         ],
       },
       {
@@ -125,7 +124,7 @@ export function AirdropNFTs() {
     writeContract({
       abi,
       address:
-        chainId === 1001 ? CONTRACT_ADDRESS_BAOBAB : CONTRACT_ADDRESS_BAOBAB,
+        chainId === 1001 ? CONTRACT_ADDRESS_BAOBAB : CONTRACT_ADDRESS_CYPRESS,
       functionName: "airdropNFTs",
       args: [tokenAddress, airdropNftIds],
     });
@@ -144,7 +143,7 @@ export function AirdropNFTs() {
       address: erc721TokenAddress as `0x${string}`,
       functionName: "setApprovalForAll",
       args: [
-        chainId === 1001 ? CONTRACT_ADDRESS_BAOBAB : CONTRACT_ADDRESS_BAOBAB,
+        chainId === 1001 ? CONTRACT_ADDRESS_BAOBAB : CONTRACT_ADDRESS_CYPRESS,
         true,
       ],
     });

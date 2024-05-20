@@ -42,11 +42,9 @@ import { useChainId } from "wagmi";
 import { erc20Abi } from "@/components/erc20-abi";
 import { abi } from "@/components/abi";
 import { Label } from "@/components/ui/label";
-
-const CONTRACT_ADDRESS_BAOBAB = "0x4A1dc90ca16d10c59c59f84365600F60CDAC74B9";
+import { CONTRACT_ADDRESS_BAOBAB, CONTRACT_ADDRESS_CYPRESS } from "./contract";
 
 const formSchema = z.object({
-  addresses: z.string(),
   airdropAmounts: z.string(),
   totalAirdropAmount: z.string(),
 });
@@ -84,7 +82,7 @@ export function AirdropTokens() {
           : undefined,
         args: [
           account.address as `0x${string}`,
-          chainId === 1001 ? CONTRACT_ADDRESS_BAOBAB : CONTRACT_ADDRESS_BAOBAB,
+          chainId === 1001 ? CONTRACT_ADDRESS_BAOBAB : CONTRACT_ADDRESS_CYPRESS,
         ],
       },
       {
@@ -147,7 +145,8 @@ export function AirdropTokens() {
     console.log(totalAirdropAmount);
     writeContract({
       abi,
-      address: CONTRACT_ADDRESS_BAOBAB,
+      address:
+        chainId === 1001 ? CONTRACT_ADDRESS_BAOBAB : CONTRACT_ADDRESS_CYPRESS,
       functionName: "airdropTokens",
       args: [tokenAddress, airdropAmounts, totalAirdropAmount],
     });
@@ -160,7 +159,7 @@ export function AirdropTokens() {
       address: erc20TokenAddress as `0x${string}`,
       functionName: "approve",
       args: [
-        chainId === 1001 ? CONTRACT_ADDRESS_BAOBAB : CONTRACT_ADDRESS_BAOBAB,
+        chainId === 1001 ? CONTRACT_ADDRESS_BAOBAB : CONTRACT_ADDRESS_CYPRESS,
         amount,
       ],
     });
@@ -182,7 +181,8 @@ export function AirdropTokens() {
 
   const { data: addressSoulBoundNFT, isLoading } = useReadContract({
     abi,
-    address: CONTRACT_ADDRESS_BAOBAB,
+    address:
+      chainId === 1001 ? CONTRACT_ADDRESS_BAOBAB : CONTRACT_ADDRESS_CYPRESS,
     functionName: "getAddressSoulBoundNFT",
     query: {
       enabled: !!account.address,
@@ -289,7 +289,12 @@ export function AirdropTokens() {
                     Please wait
                   </Button>
                 ) : (
-                  <Button type="submit">{`Approve ${erc20TokenSymbol}`}</Button>
+                  <Button
+                    variant="outline"
+                    size="default"
+                    className="bg-black text-white"
+                    type="submit"
+                  >{`Approve ${erc20TokenSymbol}`}</Button>
                 )}
               </form>
             </Form>
@@ -413,7 +418,14 @@ export function AirdropTokens() {
                     Please wait
                   </Button>
                 ) : (
-                  <Button type="submit">Airdrop ERC20</Button>
+                  <Button
+                    variant="outline"
+                    size="default"
+                    className="bg-black text-white"
+                    type="submit"
+                  >
+                    Airdrop ERC20
+                  </Button>
                 )}
               </form>
             </Form>

@@ -37,8 +37,8 @@ import { Loader2, Check } from "lucide-react";
 import { Hero, Highlight } from "./ui/hero";
 import MintButton from "./ui/mint-btn";
 import dynamic from "next/dynamic";
-
-const CONTRACT_ADDRESS_BAOBAB = "0x4A1dc90ca16d10c59c59f84365600F60CDAC74B9";
+import { useChainId } from "wagmi";
+import { CONTRACT_ADDRESS_BAOBAB, CONTRACT_ADDRESS_CYPRESS } from "./contract";
 
 const formSchema = z.object({
   to: z.coerce.string({
@@ -53,6 +53,7 @@ const formSchema = z.object({
 
 function MintNFT() {
   const { toast } = useToast();
+  let chainId = useChainId();
   const { data: hash, error, isPending, writeContract } = useWriteContract();
 
   // 1. Define your form.
@@ -65,12 +66,14 @@ function MintNFT() {
     try {
       await writeContract({
         abi,
-        address: CONTRACT_ADDRESS_BAOBAB,
+        address:
+          chainId === 1001 ? CONTRACT_ADDRESS_BAOBAB : CONTRACT_ADDRESS_CYPRESS,
         functionName: "safeMint",
         args: [`0x${values.to.slice(2)}`, values.uri.toString()], // Pass the 'to' and 'uri' values as arguments
       });
       toast({
         variant: "default",
+        className: "bg-white",
         title: "Transaction successful",
         description: "SoulBound NFT minted successfully!",
       });
@@ -115,13 +118,16 @@ function MintNFT() {
               Mint SoulBound NFT
             </Highlight>
             {/* break line */} <br />
-            The <span className="text-white">SoulBoundNFT</span> minter dapp
-            will leverage the robust infrastructure of the Klaytn blockchain,
-            renowned for its scalability, security, and developer-friendly
-            environment. Through this dapp, users will have the power to
-            immortalize their digital creations, whether it be artwork, music,
-            or any other form of digital content, as SoulBoundNFTs, imbued with
-            a sense of authenticity and exclusivity.
+            The{" "}
+            <span className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">
+              SoulBoundNFT
+            </span>{" "}
+            minter dapp will leverage the robust infrastructure of the Klaytn
+            blockchain, renowned for its scalability, security, and
+            developer-friendly environment. Through this dapp, users will have
+            the power to immortalize their digital creations, whether it be
+            artwork, music, or any other form of digital content, as
+            SoulBoundNFTs, imbued with a sense of authenticity and exclusivity.
           </motion.h1>
         </Hero>
       </div>

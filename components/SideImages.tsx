@@ -1,18 +1,18 @@
-"use client";
-
 import Image from "next/image";
 import { useAccount, useReadContract, useReadContracts } from "wagmi";
 import dynamic from "next/dynamic";
 import { abi } from "./abi";
 import nft404 from "../assets/NFT404.jpg";
-
-const CONTRACT_ADDRESS_BAOBAB = "0x4A1dc90ca16d10c59c59f84365600F60CDAC74B9";
+import { useChainId } from "wagmi";
+import { CONTRACT_ADDRESS_BAOBAB, CONTRACT_ADDRESS_CYPRESS } from "./contract";
 
 function SideImages() {
   const account = useAccount();
+  let chainId = useChainId();
   const { data: tokenURIs } = useReadContract({
     abi,
-    address: CONTRACT_ADDRESS_BAOBAB,
+    address:
+      chainId === 1001 ? CONTRACT_ADDRESS_BAOBAB : CONTRACT_ADDRESS_CYPRESS,
     functionName: "getSoulboundNFTs",
     args: [account.address ?? "0x0"],
     query: {
@@ -35,7 +35,8 @@ function SideImages() {
     tokenURIs.forEach((tokenURI) => {
       NFTuris.push({
         abi,
-        address: CONTRACT_ADDRESS_BAOBAB,
+        address:
+          chainId === 1001 ? CONTRACT_ADDRESS_BAOBAB : CONTRACT_ADDRESS_CYPRESS,
         functionName: "tokenURI",
         args: [tokenURI] as const,
       });
@@ -46,7 +47,7 @@ function SideImages() {
     contracts: NFTuris,
   });
   // const MintNFT = dynamic(() => import("./mint"), { ssr: false });
-  console.log(result);
+  // console.log(result);
   //uri ? uri.result : nft404.src;
   return (
     <div className="col-start-2 absolute right-20 top-20">
