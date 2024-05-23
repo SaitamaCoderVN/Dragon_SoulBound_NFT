@@ -192,16 +192,17 @@ export function AirdropTokens() {
   return (
     <Card className="w-full border-0 shadow-lg lg:max-w-3xl">
       <CardHeader>
-        <CardTitle>Aidrop ERC20 Token For SoulBoundNFT Community</CardTitle>
+        <CardTitle>Airdrop ERC20 Token For SoulBoundNFT Community</CardTitle>
         <CardDescription>
-          Use this form to airdrop ERC20 tokens to multiple addresses.
+          Use this form to airdrop ERC20 tokens to multiple addresses with
+          SoulBoundNFT.
         </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="flex flex-col gap-4">
-          <div className="flex flex-row gap-4 items-center">
-            <div className="bg-primary text-secondary rounded-full h-8 w-8 flex justify-center items-center">
-              <p>1</p>
+          <div className="flex flex-row gap-10 items-center">
+            <div className="bg-primary bg-black text-white text-xl font-semibold rounded-lg h-8 w-15 flex justify-center items-center">
+              <p>Step 1 ==></p>
             </div>
             <h3 className="scroll-m-20 text-xl font-semibold tracking-tight">
               Select a token
@@ -247,9 +248,9 @@ export function AirdropTokens() {
           </div>
         </div>
         <div className="flex flex-col gap-4 mt-8">
-          <div className="flex flex-row gap-4 items-center">
-            <div className="bg-primary text-secondary rounded-full h-8 w-8 flex justify-center items-center">
-              <p>2</p>
+          <div className="flex flex-row gap-10 items-center">
+            <div className="bg-primary bg-black text-white text-xl font-semibold rounded-lg h-8 w-15 flex justify-center items-center">
+              <p>Step 2 ==></p>
             </div>
             <h3 className="scroll-m-20 text-xl font-semibold tracking-tight">
               Set approval amount for the airdrop contract
@@ -340,9 +341,9 @@ export function AirdropTokens() {
           </div>
         </div>
         <div className="flex flex-col gap-4 mt-8">
-          <div className="flex flex-row gap-4 items-center">
-            <div className="bg-primary text-secondary rounded-full h-8 w-8 flex justify-center items-center">
-              <p>3</p>
+          <div className="flex flex-row gap-10 items-center">
+            <div className="bg-primary bg-black text-white text-xl font-semibold rounded-lg h-8 w-15 flex justify-center items-center">
+              <p>Step 3 ==></p>
             </div>
             <h3 className="scroll-m-20 text-xl font-semibold tracking-tight">
               Enter the airdrop details
@@ -433,12 +434,12 @@ export function AirdropTokens() {
         </div>
       </CardContent>
       <CardFooter className="flex flex-col gap-2 items-start h-fit">
-        <div className="flex flex-row gap-4 items-center">
-          <div className="bg-primary text-secondary rounded-full h-8 w-8 flex justify-center items-center">
-            <p>4</p>
+        <div className="flex flex-row gap-10 items-center">
+          <div className="bg-primary bg-black text-white text-xl font-semibold rounded-lg h-8 w-15 flex justify-center items-center">
+            <p>Step 4 ==></p>
           </div>
           <h3 className="scroll-m-20 text-xl font-semibold tracking-tight">
-            Monitor airdrop status
+            Check monitor airdrop status
           </h3>
         </div>
         <div className="flex flex-col gap-4 pl-8">
