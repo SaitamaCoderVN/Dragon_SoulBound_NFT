@@ -4,6 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { motion } from "framer-motion";
+import mintImage from "@/assets/godzilla3.gif";
+import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -131,7 +133,7 @@ function MintNFT() {
           </motion.h1>
         </Hero>
       </div>
-      <div className="bg-[#101010] h-[700px] text-zinc-300 pt-20">
+      <div className="bg-[#101010] flex flex-row h-[700px] text-zinc-300 pt-20 gap-20">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
@@ -248,6 +250,15 @@ function MintNFT() {
             )}
           </form>
         </Form>
+        <div className="flex item-left">
+          <Image
+            className="cursor-pointer"
+            src={mintImage}
+            width={600}
+            height={400}
+            alt="mintImage"
+          />
+        </div>
       </div>
       <div className="flex flex-col gap-2 items-start h-fit bg-[#101010] text-zinc-300">
         <div className="bg-zinc-700 ml-10 mb-10 p-7 rounded-xl">

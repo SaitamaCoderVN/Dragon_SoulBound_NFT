@@ -1,4 +1,4 @@
 {
-  "/page": "app/page.js",
-  "/airdrop/page": "app/airdrop/page.js"
+  "/airdrop/page": "app/airdrop/page.js",
+  "/page": "app/page.js"
 }
