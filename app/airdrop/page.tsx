@@ -7,6 +7,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { AirdropTokens } from "@/components/airdrop-erc20";
 import { AirdropNFTs } from "@/components/airdrop-erc721";
+import Airdrop from "@/components/airdrop";
 
 function AirdropPage() {
   return (
@@ -45,10 +46,9 @@ function AirdropPage() {
           </div>
         </div>
       </section>
-      <div className="absolute left-0 ml-[25%] top-0 mt-[7%] w-full row-start-2">
-        <AirdropTokens />
-        {/* <AirdropNFTs /> */}
-      </div>
+      <Airdrop />
+      {/* <AirdropTokens /> */}
+      {/* <AirdropNFTs /> */}
     </div>
   );
 }
