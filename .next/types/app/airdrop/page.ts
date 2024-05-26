@@ -1,4 +1,4 @@
-// File: /home/fuckthekingcode/KlaytnBounty/Mint-SoulBound-NFT-Dapp/app/airdrop/page.tsx
+// File: D:\WorkSpace\Mint-SoulBound-NFT-Dapp\app\airdrop\page.tsx
 import * as entry from '../../../../app/airdrop/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
