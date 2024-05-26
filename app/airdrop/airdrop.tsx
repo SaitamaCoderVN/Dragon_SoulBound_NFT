@@ -3,8 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
-import { Hero, Highlight } from "./ui/hero";
-import MintButton from "./ui/mint-btn";
+import { Hero, Highlight } from "../../components/ui/hero";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { array, z } from "zod";
@@ -48,7 +47,11 @@ import { useChainId } from "wagmi";
 import { erc20Abi } from "@/components/erc20-abi";
 import { abi } from "@/components/abi";
 import { Label } from "@/components/ui/label";
-import { CONTRACT_ADDRESS_BAOBAB, CONTRACT_ADDRESS_CYPRESS } from "./contract";
+import {
+  CONTRACT_ADDRESS_BAOBAB,
+  CONTRACT_ADDRESS_CYPRESS,
+} from "../../components/contract";
+import Stepbox from "@/components/stepbox";
 
 const formSchema = z.object({
   airdropAmounts: z.string(),
@@ -197,75 +200,35 @@ function Airdrop() {
 
   return (
     <div className="w-full row-start-2">
-      <div>
-        <Hero className="">
-          <motion.h1
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            animate={{
-              opacity: 1,
-              y: [20, -5, 0],
-            }}
-            transition={{
-              duration: 0.5,
-              ease: [0.4, 0.0, 0.2, 1],
-            }}
-            className="text-xl px-4 md:text-xl lg:text-xl font-semibold text-neutral-700 dark:text-zinc-400 max-w-4xl leading-relaxed lg:leading-snug text-left mx-auto"
-          >
-            <Highlight className="mb-2.5 text-7xl -top-9 font-bold">
-              Airdrop ERC20 Token For SoulBoundNFT Community
-            </Highlight>
-            {/* break line */} <br />
-            We are thrilled to announce a special airdrop event exclusively for
-            the{" "}
-            <span className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">
-              SoulBoundNFT
-            </span>{" "}
-            community. As part of our ongoing commitment to support and develop
-            the community, we will be distributing a large number of ERC20
-            tokens to all members. This is a fantastic opportunity for you not
-            only to increase your holdings but also to engage more deeply with
-            our innovative and dynamic ecosystem. Join us in this event and
-            become a part of this rewarding and meaningful experience!
-          </motion.h1>
-        </Hero>
-      </div>
-      <div className="bg-[#101010] h-full text-zinc-300 pt-20">
+      <div className="bg-white h-full text-[#101010] pt-20">
         <div className="flex flex-row justify-center gap-8">
           <Card className="w-full border-0 shadow-lg lg:max-w-3xl">
             <CardHeader>
-              <CardTitle className="text-4xl text-zinc-400">
+              <CardTitle className="text-4xl text-">
                 Airdrop ERC20 Token For{" "}
-                <span className="text-white">SoulBound NFT</span> Community. Use
+                <span className="text-gray">SoulBound NFT</span> Community. Use
                 this form:
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex flex-col gap-4">
                 <div className="flex flex-row gap-5 items-center">
-                  <div
-                    className="bg-white text-black text-xl font-semibold rounded-lg h-8 w-15 flex justify-center items-center"
-                    style={{ padding: "0 10px" }}
-                  >
-                    <p>Step 1 =={">"} </p>
-                  </div>
+                  <Stepbox>Step 1</Stepbox>
                   <h3 className="scroll-m-20 text-xl font-semibold tracking-tight">
                     Select a token
-                  </h3>
+                  </h3> 
                 </div>
-                <div className="flex flex-col gap-4 pl-8">
+                <div className="flex flex-col gap-4">
                   <div className="flex flex-col gap-3">
                     <Label htmlFor="tokenAddress">ERC20 Token address</Label>
                     <Input
                       name="tokenAddress"
                       type="text"
                       className="
-                        bg-[#383737] text-white
-                        border-none
-                        focus:outline-none
-                        placeholder-zinc-400
+                        bg-white text-[#383737]
+                        border
+                        focus:outline-2
+                        placeholder-[#383737]
                         w-[100%]
                         "
                       placeholder="Paste address of the token here"
@@ -305,17 +268,12 @@ function Airdrop() {
               </div>
               <div className="flex flex-col gap-4 mt-8">
                 <div className="flex flex-row gap-5 items-center">
-                  <div
-                    className="bg-white text-black text-xl font-semibold rounded-lg h-8 w-15 flex justify-center items-center"
-                    style={{ padding: "0 10px" }}
-                  >
-                    <p>Step 2 =={">"}</p>
-                  </div>
+                <Stepbox>Step 2</Stepbox>
                   <h3 className="scroll-m-20 text-xl font-semibold tracking-tight">
                     Set approval amount for the airdrop contract
                   </h3>
                 </div>
-                <div className="pl-8">
+                <div className="">
                   <Form {...setAllowanceForm}>
                     <form
                       onSubmit={setAllowanceForm.handleSubmit(onApprove)}
@@ -331,8 +289,8 @@ function Airdrop() {
                               <Input
                                 type="text"
                                 className="
-                                bg-[#383737] text-white
-                                border-none
+                                bg-white text-[#383737]
+                                border
                                 focus:outline-none
                                 placeholder-zinc-400
                                 w-[100%]
@@ -408,17 +366,12 @@ function Airdrop() {
               </div>
               <div className="flex flex-col gap-4 mt-8">
                 <div className="flex flex-row gap-5 items-center">
-                  <div
-                    className="bg-white text-black text-xl font-semibold rounded-lg h-8 w-15 flex justify-center items-center"
-                    style={{ padding: "0 10px" }}
-                  >
-                    <p>Step 3 =={">"}</p>
-                  </div>
+                <Stepbox>Step 3</Stepbox>
                   <h3 className="scroll-m-20 text-xl font-semibold tracking-tight">
                     Enter the airdrop details
                   </h3>
                 </div>
-                <div className="flex flex-col pl-8">
+                <div className="flex flex-col">
                   <Form {...form}>
                     <form
                       onSubmit={form.handleSubmit(onSubmit)}
@@ -434,8 +387,8 @@ function Airdrop() {
                               <Input
                                 type="text"
                                 className="
-                                bg-[#383737] text-white
-                                border-none
+                                bg-white text-[#383737]
+                                border
                                 focus:outline-none
                                 placeholder-zinc-400
                                 w-[100%]
@@ -484,8 +437,8 @@ function Airdrop() {
                                 placeholder="Enter amounts"
                                 type="text"
                                 className="
-                                bg-[#383737] text-white
-                                border-none
+                                bg-white text-[#383737]
+                                border
                                 focus:outline-none
                                 placeholder-zinc-400
                                 w-[100%]
@@ -521,17 +474,12 @@ function Airdrop() {
             </CardContent>
             <CardFooter className="flex flex-col gap-2 items-start h-fit">
               <div className="flex flex-row gap-5 items-center">
-                <div
-                  className="bg-white text-black text-xl font-semibold rounded-lg h-8 w-15 flex justify-center items-center"
-                  style={{ padding: "0 10px" }}
-                >
-                  <p>Step 4 =={">"}</p>
-                </div>
+              <Stepbox>Step 4</Stepbox>
                 <h3 className="scroll-m-20 text-xl font-semibold tracking-tight">
                   Check monitor airdrop status
                 </h3>
               </div>
-              <div className="flex flex-col gap-4 pl-8">
+              <div className="flex flex-col gap-4">
                 {hash ? (
                   <div className="flex flex-row gap-2">
                     Hash:
@@ -573,13 +521,11 @@ function Airdrop() {
             </CardFooter>
           </Card>
           <div className="flex item-left">
-            <Image
-              className="cursor-pointer"
+            {/* <Image
+              className="cursor-pointer w-full  object-cover"
               src={airdropImage}
-              width={1000}
-              height={700}
               alt="airdropImage"
-            />
+            /> */}
           </div>
         </div>
       </div>

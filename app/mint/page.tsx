@@ -6,14 +6,7 @@ import { z } from "zod";
 import { motion } from "framer-motion";
 import mintImage from "@/assets/godzilla3.gif";
 import Image from "next/image";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { abi } from "../../components/abi";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -31,16 +24,16 @@ import {
   useWaitForTransactionReceipt,
   useWriteContract,
 } from "wagmi";
-import { abi } from "./abi";
-import { parseEther } from "viem";
-import { formatEther } from "viem";
 import { Badge } from "@/components/ui/badge";
 import { Loader2, Check } from "lucide-react";
-import { Hero, Highlight } from "./ui/hero";
-import MintButton from "./ui/mint-btn";
 import dynamic from "next/dynamic";
 import { useChainId } from "wagmi";
-import { CONTRACT_ADDRESS_BAOBAB, CONTRACT_ADDRESS_CYPRESS } from "./contract";
+import {
+  CONTRACT_ADDRESS_BAOBAB,
+  CONTRACT_ADDRESS_CYPRESS,
+} from "@/components/contract";
+import { Hero, Highlight } from "@/components/ui/hero";
+import MintButton from "@/components/ui/mint-btn";
 
 const formSchema = z.object({
   to: z.coerce.string({
@@ -53,7 +46,7 @@ const formSchema = z.object({
   }),
 });
 
-function MintNFT() {
+export default function MintNFTPage() {
   const { toast } = useToast();
   let chainId = useChainId();
   const { data: hash, error, isPending, writeContract } = useWriteContract();
@@ -301,7 +294,3 @@ function MintNFT() {
     </div>
   );
 }
-
-export default dynamic(() => Promise.resolve(MintNFT), {
-  ssr: false,
-});
