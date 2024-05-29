@@ -136,169 +136,172 @@ function MintNFT() {
           </motion.h1>
         </Hero>
       </div>
-      <div className="bg-[#101010] flex flex-row h-[700px] text-zinc-300 pt-20 gap-20">
-        <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-8 w-[57%] px-10"
-          >
-            <FormField
-              control={form.control}
-              name="uri"
-              render={({ field }) => (
-                <FormItem className="flex flex-col gap-8">
-                  <div>
-                    <FormLabel className="text-4xl text-zinc-400">
-                      Give me the url containing the NFT metadata you want to
-                      save as a souvenir with{" "}
-                      <span className="text-white">SoulBound NFT</span>. I
-                      encourage you to use Pinata Cloud.
-                    </FormLabel>
-                  </div>
-                  <div>
+      <div className="flex flex-col gap-2">
+        <div className="bg-[#101010] flex flex-row h-[700px] text-zinc-300 pt-20 gap-20">
+          <Form {...form}>
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="space-y-8 w-[57%] px-10"
+            >
+              <FormField
+                control={form.control}
+                name="uri"
+                render={({ field }) => (
+                  <FormItem className="flex flex-col gap-8">
                     <div>
-                      <FormLabel className="text-md">
-                        Link URL Metadata :{" "}
+                      <FormLabel className="text-4xl text-zinc-400">
+                        Give me the url containing the NFT metadata you want to
+                        save as a souvenir with{" "}
+                        <span className="text-white">SoulBound NFT</span>. I
+                        encourage you to use Pinata Cloud.
                       </FormLabel>
                     </div>
                     <div>
-                      <FormLabel className="text-md">
-                        We recommend using{" "}
-                        <a
-                          className="text-md font-semibold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent"
-                          href="https://pinata.cloud"
-                          target="_blank"
-                          rel="noopener noreferrer"
+                      <div>
+                        <FormLabel className="text-md">
+                          Link URL Metadata :{" "}
+                        </FormLabel>
+                      </div>
+                      <div>
+                        <FormLabel className="text-md">
+                          We recommend using{" "}
+                          <a
+                            className="text-md font-semibold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent"
+                            href="https://pinata.cloud"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Pinata.cloud
+                          </a>{" "}
+                          to store your NFT metadata. Read more about{" "}
+                          <a
+                            className="text-md font-semibold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent"
+                            href="https://docs.opensea.io/docs/metadata-standards"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Opensea's metadata standards.
+                          </a>
+                        </FormLabel>
+                      </div>
+                      <div>
+                        <FormLabel
+                          style={{ fontStyle: "italic" }}
+                          className="text-xs"
                         >
-                          Pinata.cloud
-                        </a>{" "}
-                        to store your NFT metadata. Read more about{" "}
-                        <a
-                          className="text-md font-semibold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent"
-                          href="https://docs.opensea.io/docs/metadata-standards"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Opensea's metadata standards.
-                        </a>
-                      </FormLabel>
-                    </div>
-                    <div>
-                      <FormLabel
-                        style={{ fontStyle: "italic" }}
-                        className="text-xs"
-                      >
-                        Example :
-                        https://peach-realistic-spider-498.mypinata.cloud/ipfs/Qmdpt98UhmExzU29MFfsYTX2ph47UqU82Wu9BcRyZAFfSJ
-                      </FormLabel>
-                    </div>
-                    <FormControl className="my-1.5">
-                      <Input
-                        type="text"
-                        placeholder="Enter url link"
-                        {...field}
-                        value={field.value ?? ""}
-                        className="
+                          Example :
+                          https://peach-realistic-spider-498.mypinata.cloud/ipfs/Qmdpt98UhmExzU29MFfsYTX2ph47UqU82Wu9BcRyZAFfSJ
+                        </FormLabel>
+                      </div>
+                      <FormControl className="my-1.5">
+                        <Input
+                          type="text"
+                          placeholder="Enter url link"
+                          {...field}
+                          value={field.value ?? ""}
+                          className="
                         bg-[#383737] text-white
                         border-none
                         focus:outline-none
                         placeholder-zinc-400
                         w-[70%]
                         "
-                      />
-                    </FormControl>
-                  </div>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="to"
-              render={({ field }) => (
-                <FormItem className="flex flex-col gap-8">
-                  <div>
-                    <FormLabel className="text-md ">
-                      The wallet address you want to send the SoulBound NFT to:{" "}
-                    </FormLabel>
-                    <FormControl className="my-1.5">
-                      <Input
-                        type="text"
-                        placeholder="Enter Address"
-                        {...field}
-                        value={field.value ?? ""}
-                        className="
+                        />
+                      </FormControl>
+                    </div>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="to"
+                render={({ field }) => (
+                  <FormItem className="flex flex-col gap-8">
+                    <div>
+                      <FormLabel className="text-md ">
+                        The wallet address you want to send the SoulBound NFT
+                        to:{" "}
+                      </FormLabel>
+                      <FormControl className="my-1.5">
+                        <Input
+                          type="text"
+                          placeholder="Enter Address"
+                          {...field}
+                          value={field.value ?? ""}
+                          className="
                         bg-[#383737] text-white
                         border-none
                         focus:outline-none
                         placeholder-zinc-400
                         w-[70%]
                         "
-                      />
-                    </FormControl>
-                  </div>
-                  <FormDescription className="text-md font-semibold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">
-                    Mint your SoulBound NFT now
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
+                        />
+                      </FormControl>
+                    </div>
+                    <FormDescription className="text-md font-semibold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">
+                      Mint your SoulBound NFT now
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              {isPending ? (
+                <Button disabled>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Please wait
+                </Button>
+              ) : (
+                <MintButton />
               )}
+            </form>
+          </Form>
+          <div className="flex item-left">
+            <Image
+              className="cursor-pointer"
+              src={mintImage}
+              width={600}
+              height={400}
+              alt="mintImage"
             />
-            {isPending ? (
-              <Button disabled>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Please wait
-              </Button>
-            ) : (
-              <MintButton />
-            )}
-          </form>
-        </Form>
-        <div className="flex item-left">
-          <Image
-            className="cursor-pointer"
-            src={mintImage}
-            width={600}
-            height={400}
-            alt="mintImage"
-          />
+          </div>
         </div>
-      </div>
-      <div className="flex flex-col gap-2 items-start h-fit bg-[#101010] text-zinc-300">
-        <div className="bg-zinc-700 ml-10 mb-10 p-7 rounded-xl">
-          <h3 className="scroll-m-20 text-lg font-semibold tracking-tight">
-            Transaction status
-          </h3>
-          {hash ? (
-            <div className="flex flex-row gap-2">
-              Hash:
-              <a
-                target="_blank"
-                className="text-blue-500 underline"
-                href={`https://baobab.klaytnfinder.io/tx/${hash}`}
-              >
-                {truncateAddress(hash)}
-              </a>
-            </div>
-          ) : (
-            <>
+        <div className="flex flex-col gap-2 items-start h-fit bg-[#101010] text-zinc-300">
+          <div className="bg-zinc-700 ml-10 mb-10 p-7 rounded-xl">
+            <h3 className="scroll-m-20 text-lg font-semibold tracking-tight">
+              Transaction status
+            </h3>
+            {hash ? (
               <div className="flex flex-row gap-2">
-                Hash: no transaction hash until after submission
+                Hash:
+                <a
+                  target="_blank"
+                  className="text-blue-500 underline"
+                  href={`https://baobab.klaytnfinder.io/tx/${hash}`}
+                >
+                  {truncateAddress(hash)}
+                </a>
               </div>
-              <Badge variant="outline">No transaction yet</Badge>
-            </>
-          )}
-          {isConfirming && (
-            <Badge variant="secondary">
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Waiting for confirmation...
-            </Badge>
-          )}
-          {isConfirmed && (
-            <Badge className="flex flex-row items-center bg-green-500 cursor-pointer">
-              <Check className="mr-2 h-4 w-4" />
-              Transaction confirmed!
-            </Badge>
-          )}
+            ) : (
+              <>
+                <div className="flex flex-row gap-2">
+                  Hash: no transaction hash until after submission
+                </div>
+                <Badge variant="outline">No transaction yet</Badge>
+              </>
+            )}
+            {isConfirming && (
+              <Badge variant="secondary">
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Waiting for confirmation...
+              </Badge>
+            )}
+            {isConfirmed && (
+              <Badge className="flex flex-row items-center bg-green-500 cursor-pointer">
+                <Check className="mr-2 h-4 w-4" />
+                Transaction confirmed!
+              </Badge>
+            )}
+          </div>
         </div>
       </div>
     </div>

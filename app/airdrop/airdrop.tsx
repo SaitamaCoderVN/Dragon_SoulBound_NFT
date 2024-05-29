@@ -200,7 +200,42 @@ function Airdrop() {
 
   return (
     <div className="w-full row-start-2">
-      <div className="bg-white h-full text-[#101010] pt-20">
+      <div>
+        <Hero className="">
+          <motion.h1
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{
+              opacity: 1,
+              y: [20, -5, 0],
+            }}
+            transition={{
+              duration: 0.5,
+              ease: [0.4, 0.0, 0.2, 1],
+            }}
+            className="text-xl px-4 md:text-xl lg:text-xl font-semibold text-neutral-700 dark:text-zinc-400 max-w-4xl leading-relaxed lg:leading-snug text-left mx-auto"
+          >
+            <Highlight className="mb-2.5 text-7xl -top-9 font-bold">
+              Airdrop ERC20 Token For SoulBoundNFT Community
+            </Highlight>
+            {/* break line */} <br />
+            We are thrilled to announce a special airdrop event exclusively for
+            the{" "}
+            <span className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">
+              SoulBoundNFT
+            </span>{" "}
+            community. As part of our ongoing commitment to support and develop
+            the community, we will be distributing a large number of ERC20
+            tokens to all members. This is a fantastic opportunity for you not
+            only to increase your holdings but also to engage more deeply with
+            our innovative and dynamic ecosystem. Join us in this event and
+            become a part of this rewarding and meaningful experience!
+          </motion.h1>
+        </Hero>
+      </div>
+      <div className="bg-[#e9ebec] h-full text-[#101010] pt-20">
         <div className="flex flex-row justify-center gap-8">
           <Card className="w-full border-0 shadow-lg lg:max-w-3xl">
             <CardHeader>
@@ -216,7 +251,7 @@ function Airdrop() {
                   <Stepbox>Step 1</Stepbox>
                   <h3 className="scroll-m-20 text-xl font-semibold tracking-tight">
                     Select a token
-                  </h3> 
+                  </h3>
                 </div>
                 <div className="flex flex-col gap-4">
                   <div className="flex flex-col gap-3">
@@ -268,7 +303,7 @@ function Airdrop() {
               </div>
               <div className="flex flex-col gap-4 mt-8">
                 <div className="flex flex-row gap-5 items-center">
-                <Stepbox>Step 2</Stepbox>
+                  <Stepbox>Step 2</Stepbox>
                   <h3 className="scroll-m-20 text-xl font-semibold tracking-tight">
                     Set approval amount for the airdrop contract
                   </h3>
@@ -366,7 +401,7 @@ function Airdrop() {
               </div>
               <div className="flex flex-col gap-4 mt-8">
                 <div className="flex flex-row gap-5 items-center">
-                <Stepbox>Step 3</Stepbox>
+                  <Stepbox>Step 3</Stepbox>
                   <h3 className="scroll-m-20 text-xl font-semibold tracking-tight">
                     Enter the airdrop details
                   </h3>
@@ -474,7 +509,7 @@ function Airdrop() {
             </CardContent>
             <CardFooter className="flex flex-col gap-2 items-start h-fit">
               <div className="flex flex-row gap-5 items-center">
-              <Stepbox>Step 4</Stepbox>
+                <Stepbox>Step 4</Stepbox>
                 <h3 className="scroll-m-20 text-xl font-semibold tracking-tight">
                   Check monitor airdrop status
                 </h3>
