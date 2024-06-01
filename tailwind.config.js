@@ -14,7 +14,20 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors : {
+        "primary" : "#BA1CE2",
+        "secondary" : "#DAE9F1",
+        "dark-text" : "#2B233C",
+        "secondary-bg" : "#D9D9D9",
+      },
+      
+      backgroundImage: {
+        'gradient': 'linear-gradient(90deg, #BA1CE2 0%, #DAE9F1 100%)',
+        'gradient-2': 'linear-gradient(90deg, #BA1CE2 0%, #DAE9F1 60%)',
+        'gradient-bg': 'linear-gradient(90deg, #2B233C 12.38%, #2C1E4A 33.27%, #1F2D51 100%)',
+      }
+    },
   },
   plugins: [
     addVariablesForColors,

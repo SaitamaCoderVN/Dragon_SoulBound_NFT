@@ -11,7 +11,7 @@ const SHUFFLE_TIME = 50;
 const CHARS = "!@#$%^&*():{};|,.<>/?";
 
 const MintButton = () => {
-    const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const [text, setText] = useState(TARGET_TEXT);
 
@@ -49,17 +49,17 @@ const MintButton = () => {
 
   return (
     <motion.button
-        type="submit"
-        whileHover={{
-            scale: 1.025,
-        }}
-        whileTap={{
-            scale: 0.975,
-        }}
-        onMouseEnter={scramble}
-        onMouseLeave={stopScramble}
-        className="group relative overflow-hidden rounded-lg border-[1px] border-neutral-500 bg-neutral-700 px-4 py-2 font-mono font-medium uppercase text-neutral-300 transition-colors hover:text-blue-300"
-        >
+      type="submit"
+      whileHover={{
+        scale: 1.025,
+      }}
+      whileTap={{
+        scale: 0.975,
+      }}
+      onMouseEnter={scramble}
+      onMouseLeave={stopScramble}
+      className="group relative overflow-hidden rounded-lg border-[1px] border-neutral-500 bg-primary px-4 py-2 font-mono font-medium uppercase text-secondary transition-colors hover:text-secondary"
+    >
       <div className="relative z-10 flex items-center gap-2">
         <FiLock />
         <span>{text}</span>

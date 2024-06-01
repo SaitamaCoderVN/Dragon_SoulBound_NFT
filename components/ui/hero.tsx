@@ -29,12 +29,11 @@ export const Hero = ({
   return (
     <div
       className={cn(
-        "relative h-[100vh] flex items-center bg-white dark:bg-[#101010] justify-left w-full group",
-        containerClassName
+        "relative h-[100vh] flex items-center bg-gradient-bg dark:bg-[#101010] justify-left w-full group",
       )}
       onMouseMove={handleMouseMove}
     >
-      <div className="absolute inset-0 bg-dot-thick-neutral-300 dark:bg-dot-thick-neutral-800  pointer-events-none" />
+      <div className="absolute inset-0  pointer-events-none" />
       <motion.div
         className="pointer-events-none bg-dot-thick-indigo-500 dark:bg-dot-thick-indigo-500   absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100"
         style={{
@@ -86,7 +85,7 @@ export const Highlight = ({
         display: "inline",
       }}
       className={cn(
-        `relative inline-block pb-1  rounded-lg bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent`,
+        `relative inline-block pb-1  rounded-lg bg-gradient bg-clip-text text-transparent`,
         className
       )}
     >
