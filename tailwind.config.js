@@ -18,8 +18,10 @@ module.exports = {
       colors : {
         "primary" : "#BA1CE2",
         "secondary" : "#DAE9F1",
+        "dark-bg" : "#3C2A64",
         "dark-text" : "#2B233C",
         "secondary-bg" : "#D9D9D9",
+        
       },
       
       backgroundImage: {

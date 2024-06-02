@@ -13,16 +13,17 @@ function Header() {
   return (
     <>
       <section className=" absolute top-0 z-[100] flex items-center justify-between w-full px-10 py-1 ">
-        <div className="flex">
-          <Image
-            className="cursor-pointer"
-            src={logo}
-            width={70}
-            height={70}
-            alt="logo"
-          />
-          <Link href="/">
-            <div className="mt-[3vh] text-primary -top-9 font-bold text-xl md:text-xl lg:text-xl lg:font-semibold  max-w-4xl leading-relaxed lg:leading-snug text-left mx-auto">
+        <div >
+          <Link href="/" className="flex">
+
+            <Image
+              className="cursor-pointer  "
+              src={logo}
+              width={70}
+              height={70}
+              alt="logo"
+            />
+            <div className="mt-[3vh] hidden lg:flex text-primary -top-9 font-bold text-xl md:text-xl lg:text-xl lg:font-semibold  max-w-4xl leading-relaxed lg:leading-snug text-left mx-auto">
               DragonSoulBoundNFT
             </div>
           </Link>
