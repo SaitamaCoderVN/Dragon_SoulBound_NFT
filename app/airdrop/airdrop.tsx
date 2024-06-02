@@ -367,8 +367,8 @@ function Airdrop() {
                           className="text-blue-500 underline"
                           href={
                             chainId === 1001
-                              ? `https://baobab.klaytnfinder.io/tx/${approveHash}`
-                              : `https://klaytnfinder.io/tx/${hash}`
+                              ? `https://opal.subscan.io/tx/${approveHash}`
+                              : `https://opal.subscan.io/tx/${hash}`
                           }
                         >
                           {truncateAddress(approveHash)}
@@ -523,8 +523,8 @@ function Airdrop() {
                       className="text-blue-500 underline"
                       href={
                         chainId === 1001
-                          ? `https://baobab.klaytnfinder.io/tx/${hash}`
-                          : `https://klaytnfinder.io/tx/${hash}`
+                          ? `https://opal.subscan.io/${hash}`
+                          : `https://opal.subscan.io/${hash}`
                       }
                     >
                       {truncateAddress(hash)}
