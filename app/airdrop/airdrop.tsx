@@ -199,7 +199,7 @@ function Airdrop() {
   });
 
   return (
-    <div className="bg-gradient-bg pt-20 pb-20 w-full row-start-2">
+    <div className="bg-gradient-bg pb-20 w-full row-start-2">
       <div className="h-full text-[#101010] pt-20">
         <div className=" flex flex-row justify-center gap-8">
           <Card className="bg-dark-bg text-white w-full border-0 shadow-lg lg:max-w-3xl">

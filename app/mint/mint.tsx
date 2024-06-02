@@ -7,7 +7,7 @@ import MintImage from "@/assets/Mint.png";
 
 function MintNFT() {
   return (
-    <div className="bg-gradient-bg pt-32 pb-20 px-10 w-full">
+    <div className="bg-gradient-bg pt-4 pb-20 px-10 w-full">
 
       <div className="bg-[#100F27] px-5 py-8 rounded-2xl">
         <div className="bg-gradient bg-clip-text text-transparent text-4xl font-extrabold">
