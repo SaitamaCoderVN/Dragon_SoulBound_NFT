@@ -6,15 +6,46 @@ import dynamic from "next/dynamic";
 import { abi } from "./abi";
 import nft404 from "../assets/NFT404.jpg";
 import { useChainId } from "wagmi";
-import { CONTRACT_ADDRESS_BAOBAB, CONTRACT_ADDRESS_CYPRESS } from "./contract";
+import {
+  CHAINID,
+  CONTRACT_ADDRESS_BAOBAB,
+  CONTRACT_ADDRESS_CYPRESS,
+  CONTRACT_ADDRESS_OPAL,
+  CONTRACT_ADDRESS_QUARTZ,
+  CONTRACT_ADDRESS_UNIQUE,
+} from "./contract";
 
 function SideImages() {
   const account = useAccount();
   let chainId = useChainId();
+
+  let contractAddress: any;
+  switch (chainId) {
+    case CHAINID.BAOBAB:
+      contractAddress = CONTRACT_ADDRESS_BAOBAB;
+      break;
+
+    case CHAINID.CYPRESS:
+      contractAddress = CONTRACT_ADDRESS_CYPRESS;
+      break;
+
+    case CHAINID.UNIQUE:
+      contractAddress = CONTRACT_ADDRESS_UNIQUE;
+      break;
+
+    case CHAINID.QUARTZ:
+      contractAddress = CONTRACT_ADDRESS_QUARTZ;
+      break;
+    case CHAINID.OPAL:
+      contractAddress = CONTRACT_ADDRESS_OPAL;
+      break;
+    default:
+      break;
+  }
+
   const { data: tokenURIs } = useReadContract({
     abi,
-    address:
-      chainId === 1001 ? CONTRACT_ADDRESS_BAOBAB : CONTRACT_ADDRESS_CYPRESS,
+    address: contractAddress,
     functionName: "getSoulboundNFTs",
     args: [account.address ?? "0x0"],
     query: {
@@ -37,8 +68,7 @@ function SideImages() {
     tokenURIs.forEach((tokenURI) => {
       NFTuris.push({
         abi,
-        address:
-          chainId === 1001 ? CONTRACT_ADDRESS_BAOBAB : CONTRACT_ADDRESS_CYPRESS,
+        address: contractAddress,
         functionName: "tokenURI",
         args: [tokenURI] as const,
       });

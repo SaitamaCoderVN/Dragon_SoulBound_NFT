@@ -33,8 +33,17 @@ import MintButton from "../../components/ui/mint-btn";
 import dynamic from "next/dynamic";
 import { useChainId } from "wagmi";
 import {
+  BLOCK_EXPLORER_BAOBAB,
+  BLOCK_EXPLORER_CYPRESS,
+  BLOCK_EXPLORER_OPAL,
+  BLOCK_EXPLORER_QUARTZ,
+  BLOCK_EXPLORER_UNIQUE,
+  CHAINID,
   CONTRACT_ADDRESS_BAOBAB,
   CONTRACT_ADDRESS_CYPRESS,
+  CONTRACT_ADDRESS_OPAL,
+  CONTRACT_ADDRESS_QUARTZ,
+  CONTRACT_ADDRESS_UNIQUE,
 } from "../../components/contract";
 
 const formSchema = z.object({
@@ -51,6 +60,52 @@ const formSchema = z.object({
 export default function MintForm() {
   const { toast } = useToast();
   let chainId = useChainId();
+  let contractAddress: any;
+  switch (chainId) {
+    case CHAINID.BAOBAB:
+      contractAddress = CONTRACT_ADDRESS_BAOBAB;
+      break;
+
+    case CHAINID.CYPRESS:
+      contractAddress = CONTRACT_ADDRESS_CYPRESS;
+      break;
+
+    case CHAINID.UNIQUE:
+      contractAddress = CONTRACT_ADDRESS_UNIQUE;
+      break;
+
+    case CHAINID.QUARTZ:
+      contractAddress = CONTRACT_ADDRESS_QUARTZ;
+      break;
+    case CHAINID.OPAL:
+      contractAddress = CONTRACT_ADDRESS_OPAL;
+      break;
+    default:
+      break;
+  }
+  let blockexplorer;
+  switch (chainId) {
+    case CHAINID.BAOBAB:
+      blockexplorer = BLOCK_EXPLORER_BAOBAB;
+      break;
+
+    case CHAINID.CYPRESS:
+      blockexplorer = BLOCK_EXPLORER_CYPRESS;
+      break;
+
+    case CHAINID.UNIQUE:
+      blockexplorer = BLOCK_EXPLORER_UNIQUE;
+      break;
+
+    case CHAINID.QUARTZ:
+      blockexplorer = BLOCK_EXPLORER_QUARTZ;
+      break;
+    case CHAINID.OPAL:
+      blockexplorer = BLOCK_EXPLORER_OPAL;
+      break;
+    default:
+      break;
+  }
   const { data: hash, error, isPending, writeContract } = useWriteContract();
 
   // 1. Define your form.
@@ -63,8 +118,7 @@ export default function MintForm() {
     try {
       await writeContract({
         abi,
-        address:
-          chainId === 1001 ? CONTRACT_ADDRESS_BAOBAB : CONTRACT_ADDRESS_CYPRESS,
+        address: contractAddress,
         functionName: "safeMint",
         args: [`0x${values.to.slice(2)}`, values.uri.toString()], // Pass the 'to' and 'uri' values as arguments
       });
@@ -208,7 +262,7 @@ export default function MintForm() {
               target="_blank"
               className="text-blue-500 underline"
               // href={`https://baobab.klaytnfinder.io/tx/${hash}`}
-              href={`https://opal.subscan.io/tx/${hash}`}
+              href={`${blockexplorer + hash}`}
             >
               {truncateAddress(hash)}
             </a>

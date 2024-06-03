@@ -48,8 +48,17 @@ import { erc20Abi } from "@/components/erc20-abi";
 import { abi } from "@/components/abi";
 import { Label } from "@/components/ui/label";
 import {
+  BLOCK_EXPLORER_BAOBAB,
+  BLOCK_EXPLORER_CYPRESS,
+  BLOCK_EXPLORER_OPAL,
+  BLOCK_EXPLORER_QUARTZ,
+  BLOCK_EXPLORER_UNIQUE,
+  CHAINID,
   CONTRACT_ADDRESS_BAOBAB,
   CONTRACT_ADDRESS_CYPRESS,
+  CONTRACT_ADDRESS_OPAL,
+  CONTRACT_ADDRESS_QUARTZ,
+  CONTRACT_ADDRESS_UNIQUE,
 } from "../../components/contract";
 import Stepbox from "@/components/stepbox";
 
@@ -66,6 +75,54 @@ function Airdrop() {
   const { toast } = useToast();
   const account = useAccount();
   let chainId = useChainId();
+
+  let contractAddress: any;
+  switch (chainId) {
+    case CHAINID.BAOBAB:
+      contractAddress = CONTRACT_ADDRESS_BAOBAB;
+      break;
+
+    case CHAINID.CYPRESS:
+      contractAddress = CONTRACT_ADDRESS_CYPRESS;
+      break;
+
+    case CHAINID.UNIQUE:
+      contractAddress = CONTRACT_ADDRESS_UNIQUE;
+      break;
+
+    case CHAINID.QUARTZ:
+      contractAddress = CONTRACT_ADDRESS_QUARTZ;
+      break;
+    case CHAINID.OPAL:
+      contractAddress = CONTRACT_ADDRESS_OPAL;
+      break;
+    default:
+      break;
+  }
+  let blockexplorer;
+  switch (chainId) {
+    case CHAINID.BAOBAB:
+      blockexplorer = BLOCK_EXPLORER_BAOBAB;
+      break;
+
+    case CHAINID.CYPRESS:
+      blockexplorer = BLOCK_EXPLORER_CYPRESS;
+      break;
+
+    case CHAINID.UNIQUE:
+      blockexplorer = BLOCK_EXPLORER_UNIQUE;
+      break;
+
+    case CHAINID.QUARTZ:
+      blockexplorer = BLOCK_EXPLORER_QUARTZ;
+      break;
+    case CHAINID.OPAL:
+      blockexplorer = BLOCK_EXPLORER_OPAL;
+      break;
+    default:
+      break;
+  }
+
   const [erc20TokenAddress, setErc20TokenAddress] = useState<string>("");
   const [erc20TokenSymbol, setErc20TokenSymbol] = useState<string>("");
   const { data: hash, error, isPending, writeContract } = useWriteContract();
@@ -154,8 +211,7 @@ function Airdrop() {
     console.log(totalAirdropAmount);
     writeContract({
       abi,
-      address:
-        chainId === 1001 ? CONTRACT_ADDRESS_BAOBAB : CONTRACT_ADDRESS_CYPRESS,
+      address: contractAddress,
       functionName: "airdropTokens",
       args: [tokenAddress, airdropAmounts, totalAirdropAmount],
     });
@@ -167,10 +223,7 @@ function Airdrop() {
       abi: erc20Abi,
       address: erc20TokenAddress as `0x${string}`,
       functionName: "approve",
-      args: [
-        chainId === 1001 ? CONTRACT_ADDRESS_BAOBAB : CONTRACT_ADDRESS_CYPRESS,
-        amount,
-      ],
+      args: [contractAddress, amount],
     });
   }
 
@@ -190,8 +243,7 @@ function Airdrop() {
 
   const { data: addressSoulBoundNFT, isLoading } = useReadContract({
     abi,
-    address:
-      chainId === 1001 ? CONTRACT_ADDRESS_BAOBAB : CONTRACT_ADDRESS_CYPRESS,
+    address: contractAddress,
     functionName: "getAddressSoulBoundNFT",
     query: {
       enabled: !!account.address,
@@ -328,11 +380,7 @@ function Airdrop() {
                         <a
                           target="_blank"
                           className="text-blue-500 underline"
-                          href={
-                            chainId === 1001
-                              ? `https://opal.subscan.io/tx/${approveHash}`
-                              : `https://opal.subscan.io/tx/${hash}`
-                          }
+                          href={`${blockexplorer + approveHash}`}
                         >
                           {truncateAddress(approveHash)}
                         </a>
@@ -483,11 +531,7 @@ function Airdrop() {
                     <a
                       target="_blank"
                       className="text-blue-500 underline"
-                      href={
-                        chainId === 1001
-                          ? `https://opal.subscan.io/${hash}`
-                          : `https://opal.subscan.io/${hash}`
-                      }
+                      href={`${blockexplorer + hash}`}
                     >
                       {truncateAddress(hash)}
                     </a>

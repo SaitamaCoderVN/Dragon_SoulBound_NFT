@@ -39,7 +39,19 @@ import { Loader2, Check } from "lucide-react";
 import { abi } from "./abi";
 import { erc721Abi } from "./erc721-abi";
 import { useChainId } from "wagmi";
-import { CONTRACT_ADDRESS_BAOBAB, CONTRACT_ADDRESS_CYPRESS } from "./contract";
+import {
+  BLOCK_EXPLORER_BAOBAB,
+  BLOCK_EXPLORER_CYPRESS,
+  BLOCK_EXPLORER_OPAL,
+  BLOCK_EXPLORER_QUARTZ,
+  BLOCK_EXPLORER_UNIQUE,
+  CHAINID,
+  CONTRACT_ADDRESS_BAOBAB,
+  CONTRACT_ADDRESS_CYPRESS,
+  CONTRACT_ADDRESS_OPAL,
+  CONTRACT_ADDRESS_QUARTZ,
+  CONTRACT_ADDRESS_UNIQUE,
+} from "./contract";
 
 const formSchema = z.object({
   addresses: z.string(),
@@ -50,6 +62,29 @@ export function AirdropNFTs() {
   const { toast } = useToast();
   const account = useAccount();
   const chainId = useChainId();
+  let blockexplorer;
+  switch (chainId) {
+    case CHAINID.BAOBAB:
+      blockexplorer = BLOCK_EXPLORER_BAOBAB;
+      break;
+
+    case CHAINID.CYPRESS:
+      blockexplorer = BLOCK_EXPLORER_CYPRESS;
+      break;
+
+    case CHAINID.UNIQUE:
+      blockexplorer = BLOCK_EXPLORER_UNIQUE;
+      break;
+
+    case CHAINID.QUARTZ:
+      blockexplorer = BLOCK_EXPLORER_QUARTZ;
+      break;
+    case CHAINID.OPAL:
+      blockexplorer = BLOCK_EXPLORER_OPAL;
+      break;
+    default:
+      break;
+  }
   const [erc721TokenAddress, setErc721TokenAddress] = useState<string>("");
   const [erc721TokenSymbol, setErc721TokenSymbol] = useState<string>("");
   const { data: hash, error, isPending, writeContract } = useWriteContract();
@@ -244,11 +279,7 @@ export function AirdropNFTs() {
                   <a
                     target="_blank"
                     className="text-blue-500 underline"
-                    href={
-                      chainId === 1001
-                        ? `https://baobab.klaytnfinder.io/tx/${approveHash}`
-                        : `https://klaytnfinder.io/tx/${hash}`
-                    }
+                    href={chainId === 1001 ? `${approveHash}` : `${hash}`}
                   >
                     {truncateAddress(approveHash)}
                   </a>
@@ -343,11 +374,7 @@ export function AirdropNFTs() {
               <a
                 target="_blank"
                 className="text-blue-500 underline"
-                href={
-                  chainId === 1001
-                    ? `https://baobab.klaytnfinder.io/tx/${hash}`
-                    : `https://klaytnfinder.io/tx/${hash}`
-                }
+                href={`${blockexplorer + hash}`}
               >
                 {truncateAddress(hash)}
               </a>
