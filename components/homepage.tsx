@@ -78,7 +78,7 @@ function HomePage() {
   return (
     <div className="w-full">
       <div>
-        <Hero className="flex items-center px-10">
+        <Hero className="flex items-center justify-center px-10">
           <div>
             <motion.h1
               initial={{
@@ -93,7 +93,7 @@ function HomePage() {
                 duration: 0.5,
                 ease: [0.4, 0.0, 0.2, 1],
               }}
-              className="text-xl md:text-xl lg:text-xl font-semibold text-white  dark:text-zinc-400 max-w-4xl leading-relaxed lg:leading-snug text-left"
+              className="text-xl md:text-xl lg:text-xl font-semibold text-white text-justify dark:text-zinc-400 max-w-4xl leading-relaxed lg:leading-snug lg:text-left"
             >
               <Highlight className="mb-2.5 text-7xl -top-9 font-bold">
                 Mint SoulBound NFT
@@ -119,7 +119,7 @@ function HomePage() {
               </Button>
             </Link>
           </div>
-          <div className="w-[40%]">
+          <div className="w-[40%] hidden lg:block">
             <HeroImage />
           </div>
         </Hero>

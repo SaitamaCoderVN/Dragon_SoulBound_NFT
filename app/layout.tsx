@@ -5,12 +5,11 @@ import "@rainbow-me/rainbowkit/styles.css";
 import { Providers } from "./providers";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/header";
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Bootcamp Frontends",
-  description: "Interactive frontend for buildstation DApp bootcamp",
+  title: "SoulBoundNFT",
+  description: "Welcome to the SoulBoundNFT Minter Dapp, a groundbreaking decentralized application (dapp) built on the Klaytn blockchain network. Our mission is to redefine digital ownership by enabling users to mint SoulBound Non-Fungible Tokens (NFTs) that encapsulate emotional connection and uniqueness.",
 };
 
 export default function RootLayout({
@@ -20,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className} >
         <Providers>
           <Header />
           {children}
