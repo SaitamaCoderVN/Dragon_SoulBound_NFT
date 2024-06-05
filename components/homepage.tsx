@@ -77,53 +77,51 @@ function HomePage() {
 
   return (
     <div className="w-full">
-      <div>
-        <Hero className="flex items-center justify-center px-10">
-          <div>
-            <motion.h1
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: [20, -5, 0],
-              }}
-              transition={{
-                duration: 0.5,
-                ease: [0.4, 0.0, 0.2, 1],
-              }}
-              className="text-xl md:text-xl lg:text-xl font-semibold text-white text-justify dark:text-zinc-400 max-w-4xl leading-relaxed lg:leading-snug lg:text-left"
-            >
-              <Highlight className="mb-2.5 text-7xl -top-9 font-bold">
-                Mint SoulBound NFT
-              </Highlight>
-              {/* break line */} <br />
-              The{" "}
-              <span className="bg-primary bg-clip-text text-transparent">
-                SoulBoundNFT
-              </span>{" "}
-              minter dapp will leverage the robust infrastructure of the Klaytn
-              blockchain, renowned for its scalability, security, and
-              developer-friendly environment. Through this dapp, users will have
-              the power to immortalize their digital creations, whether it be
-              artwork, music, or any other form of digital content, as
-              SoulBoundNFTs, imbued with a sense of authenticity and exclusivity.
-            </motion.h1>
-            <Link href="/mint">
-              <Button
-                variant="default"
-                size="default"
-                className="bg-primary flex mt-6   text-white">
-                Mint SoulBound NFT Now
-              </Button>
-            </Link>
-          </div>
-          <div className="w-[40%] hidden lg:block">
-            <HeroImage />
-          </div>
-        </Hero>
-      </div>
+      <Hero className="w-full flex items-center justify-center py-36px-10">
+        <div>
+          <motion.h1
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{
+              opacity: 1,
+              y: [20, -5, 0],
+            }}
+            transition={{
+              duration: 0.5,
+              ease: [0.4, 0.0, 0.2, 1],
+            }}
+            className="text-sm  md:text-xl lg:text-xl font-semibold text-white text-justify dark:text-zinc-400 max-w-4xl leading-relaxed lg:leading-snug lg:text-left"
+          >
+            <Highlight className="mb-2.5 text-5xl lg:text-7xl -top-9 font-bold">
+              Mint SoulBound NFT
+            </Highlight>
+            {/* break line */} <br />
+            The{" "}
+            <span className="bg-primary bg-clip-text text-transparent">
+              SoulBoundNFT
+            </span>{" "}
+            minter dapp will leverage the robust infrastructure of the Klaytn
+            blockchain, renowned for its scalability, security, and
+            developer-friendly environment. Through this dapp, users will have
+            the power to immortalize their digital creations, whether it be
+            artwork, music, or any other form of digital content, as
+            SoulBoundNFTs, imbued with a sense of authenticity and exclusivity.
+          </motion.h1>
+          <Link href="/mint">
+            <Button
+              variant="default"
+              size="default"
+              className="bg-primary flex mt-6   text-white">
+              Mint SoulBound NFT Now
+            </Button>
+          </Link>
+        </div>
+        <div className="w-[40%] hidden lg:block">
+          <HeroImage />
+        </div>
+      </Hero>
     </div>
   );
 }

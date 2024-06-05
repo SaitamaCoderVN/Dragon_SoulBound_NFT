@@ -151,7 +151,7 @@ export default function MintForm() {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-8 text-white"
+          className="space-y-8 w-full text-white"
         >
           <FormField
             control={form.control}
@@ -188,6 +188,7 @@ export default function MintForm() {
 
                   <FormControl className="my-1.5">
                     <Input
+                      required
                       type="text"
                       placeholder="Enter URL Link"
                       {...field}
@@ -203,7 +204,7 @@ export default function MintForm() {
                   <div>
                     <FormLabel
                       style={{ fontStyle: "italic" }}
-                      className="text-xs"
+                      className="text-[0.45rem] lg:text-xs"
                     >
                       Example :
                       https://peach-realistic-spider-498.mypinata.cloud/ipfs/Qmdpt98UhmExzU29MFfsYTX2ph47UqU82Wu9BcRyZAFfSJ
@@ -224,6 +225,7 @@ export default function MintForm() {
                   </FormLabel>
                   <FormControl className="my-1.5">
                     <Input
+                      required
                       type="text"
                       placeholder="Enter Address"
                       {...field}

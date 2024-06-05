@@ -274,6 +274,7 @@ function Airdrop() {
                   <div className="flex flex-col gap-3">
                     <Label htmlFor="tokenAddress">ERC20 Token address</Label>
                     <Input
+                      required
                       name="tokenAddress"
                       type="text"
                       className="
@@ -338,6 +339,7 @@ function Airdrop() {
                             <FormLabel>Approval amount</FormLabel>
                             <FormControl>
                               <Input
+                                required
                                 type="text"
                                 className="
                                 bg-secondary-bg text-dark-text
@@ -431,6 +433,7 @@ function Airdrop() {
                             <FormLabel>Total ERC20 amount</FormLabel>
                             <FormControl>
                               <Input
+                                required
                                 type="text"
                                 className="
                                 bg-white text-[#383737]
@@ -480,6 +483,7 @@ function Airdrop() {
                             <FormLabel>Amount</FormLabel>
                             <FormControl>
                               <Input
+                                required
                                 placeholder="Enter amounts"
                                 type="text"
                                 className="
@@ -561,13 +565,6 @@ function Airdrop() {
               </div>
             </CardFooter>
           </Card>
-          <div className="flex item-left">
-            {/* <Image
-              className="cursor-pointer w-full  object-cover"
-              src={airdropImage}
-              alt="airdropImage"
-            /> */}
-          </div>
         </div>
       </div>
     </div>

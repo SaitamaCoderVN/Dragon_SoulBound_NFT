@@ -9,7 +9,7 @@ function AirdropPage() {
       <Hero className="flex items-center  px-10">
         <div>
           <h1
-            className="text-lg lg:text-xl font-semibold  text-white w-[95%] dark:text-zinc-400 max-w-4xl leading-relaxed lg:leading-snug  lg:text-left"
+            className="text-sm lg:text-xl font-semibold  text-white w-[95%] dark:text-zinc-400 max-w-4xl leading-relaxed lg:leading-snug  lg:text-left"
           >
             <Highlight className="text-left mb-2.5 text-4xl lg:text-7xl -top-9 font-bold">
               Airdrop ERC20 Token For SoulBoundNFT Community
