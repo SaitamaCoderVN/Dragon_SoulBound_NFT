@@ -7,18 +7,18 @@ import MintImage from "@/assets/Mint.png";
 
 function MintNFT() {
   return (
-    <div className="bg-gradient-bg pt-4 pb-20 px-10 w-full">
+    <div className="bg-gradient-bg pt-4 pb-20  lg:px-10 w-full">
 
-      <div className="bg-[#100F27] px-5 py-8 rounded-2xl">
-        <div className="bg-gradient bg-clip-text text-transparent text-4xl font-extrabold">
+      <div className="bg-[#100F27] px-2 lg:px-5 py-8 rounded-2xl">
+        <div className="bg-gradient bg-clip-text text-transparent text-xl lg:text-4xl font-extrabold">
           Give me the url containing the NFT metadata you want to
           save as a souvenir with{" "}
           <span className="text-white">SoulBound NFT</span>. I
           encourage you to use Pinata Cloud.
         </div>
         <div className="flex w-full">
-          <div className="w-[55%]"><MintForm /></div>
-          <div className="w-[45%]">
+          <div className="w-full lg:w-[55%]"><MintForm /></div>
+          <div className="w-[45%] hidden lg:block">
             <Image
               src={MintImage}
               alt="Mint"

@@ -251,7 +251,7 @@ export default function MintForm() {
           )}
         </form>
       </Form>
-      <div className="bg-secondary-bg p-6 mt-10 inline-block w-[60%] rounded-xl">
+      <div className="bg-secondary-bg p-6 mt-10 inline-block w-full lg:w-[70%] rounded-xl">
         <h3 className="scroll-m-20 text-lg font-semibold tracking-tight">
           Transaction status
         </h3>

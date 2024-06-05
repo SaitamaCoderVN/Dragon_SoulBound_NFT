@@ -13,9 +13,9 @@ function MintNFTPage() {
         <Hero className="flex items-center px-10">
           <div>
             <h1
-              className="text-xl md:text-xl lg:text-xl font-semibold text-white  dark:text-zinc-400 max-w-4xl leading-relaxed lg:leading-snug text-left"
+              className="text-lg md:text-xl  lg:text-xl font-semibold text-white  dark:text-zinc-400 max-w-4xl leading-relaxed lg:leading-snug text-left"
             >
-              <Highlight className="mb-2.5 text-7xl -top-9 font-bold">
+              <Highlight className="mb-2.5 text-4xl lg:text-7xl -top-9 font-bold">
                 Mint SoulBound NFT
               </Highlight>
               {/* break line */} <br />
@@ -31,7 +31,7 @@ function MintNFTPage() {
               SoulBoundNFTs, imbued with a sense of authenticity and exclusivity.
             </h1>
           </div>
-          <div className="w-[40%]">
+          <div className="w-[40%] hidden lg:block">
             <HeroImage />
           </div>
         </Hero>

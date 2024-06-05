@@ -29,7 +29,7 @@ export const Hero = ({
   return (
     <div
       className={cn(
-        "relative h-[100vh] flex items-center bg-gradient-bg dark:bg-[#101010] justify-left w-full group",
+        "relative h-[85vh]  lg:h-[100vh] flex items-center bg-gradient-bg dark:bg-[#101010] justify-left w-full group",
       )}
       onMouseMove={handleMouseMove}
     >
