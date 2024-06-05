@@ -9,11 +9,11 @@ import HeroImage from "@/components/svgcomponents/HeroImage";
 function MintNFTPage() {
   return (
     <>
-      <div className="justify-between items-center w-full flex flex-col relative">
-        <Hero className="flex items-center px-10">
+      <div className="flex flex-col justify-between items-center w-full relative">
+        <Hero className="flex items-center w-full px-10">
           <div>
             <h1
-              className="text-lg md:text-xl  lg:text-xl font-semibold text-white  dark:text-zinc-400 max-w-4xl leading-relaxed lg:leading-snug text-left"
+              className="text-sm md:text-xl  lg:text-xl font-semibold text-white  dark:text-zinc-400 max-w-4xl leading-relaxed lg:leading-snug text-left"
             >
               <Highlight className="mb-2.5 text-4xl lg:text-7xl -top-9 font-bold">
                 Mint SoulBound NFT
