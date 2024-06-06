@@ -21,13 +21,13 @@ function Header() {
     <>
       <nav className="flex lg:absolute top-0 z-[100] items-center justify-between bg-gradient-bg w-full px-10 py-1 text-nowrap text-xs ">
         <div>
-          <Link href="/" className="flex">
+          <Link href="/" className="flex items-center">
             <Image
               className="cursor-pointer w-[4rem] h-auto"
               src={logo}
               alt="logo"
             />
-            <div className="mt-[3vh] hidden lg:flex text-primary -top-9 font-bold text-xl md:text-xl lg:text-xl lg:font-semibold max-w-4xl leading-relaxed lg:leading-snug text-left mx-auto">
+            <div className="ml-4 text-primary -top-9 font-bold text-xs md:text-xl lg:text-xl lg:font-semibold max-w-4xl leading-relaxed lg:leading-snug text-left mx-auto">
               DragonSoulBoundNFT
             </div>
           </Link>
