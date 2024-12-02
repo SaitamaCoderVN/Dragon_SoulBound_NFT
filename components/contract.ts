@@ -5,4 +5,4 @@ export enum CHAINID {
     CYPRESS = 8217,
 };
 export const BLOCK_EXPLORER_BAOBAB = `https://kairos.kaiascan.io/tx/`;
-export const BLOCK_EXPLORER_CYPRESS = `https://kaiascan.io/tx`;
+export const BLOCK_EXPLORER_CYPRESS = `https://kaiascan.io/tx/`;
