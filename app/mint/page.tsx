@@ -23,7 +23,7 @@ function MintNFTPage() {
               <span className="bg-primary bg-clip-text text-transparent">
                 SoulBoundNFT
               </span>{" "}
-              minter dapp will leverage the robust infrastructure of the Klaytn
+              minter dapp will leverage the robust infrastructure of the Kaia
               blockchain, renowned for its scalability, security, and
               developer-friendly environment. Through this dapp, users will have
               the power to immortalize their digital creations, whether it be

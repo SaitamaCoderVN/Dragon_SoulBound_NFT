@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "SoulBoundNFT",
-  description: "Welcome to the SoulBoundNFT Minter Dapp, a groundbreaking decentralized application (dapp) built on the Klaytn blockchain network. Our mission is to redefine digital ownership by enabling users to mint SoulBound Non-Fungible Tokens (NFTs) that encapsulate emotional connection and uniqueness.",
+  description: "Welcome to the SoulBoundNFT Minter Dapp, a groundbreaking decentralized application (dapp) built on the Kaia blockchain network. Our mission is to redefine digital ownership by enabling users to mint SoulBound Non-Fungible Tokens (NFTs) that encapsulate emotional connection and uniqueness.",
 };
 
 export default function RootLayout({

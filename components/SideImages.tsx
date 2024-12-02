@@ -10,9 +10,6 @@ import {
   CHAINID,
   CONTRACT_ADDRESS_BAOBAB,
   CONTRACT_ADDRESS_CYPRESS,
-  CONTRACT_ADDRESS_OPAL,
-  CONTRACT_ADDRESS_QUARTZ,
-  CONTRACT_ADDRESS_UNIQUE,
 } from "./contract";
 
 function SideImages() {
@@ -28,17 +25,7 @@ function SideImages() {
     case CHAINID.CYPRESS:
       contractAddress = CONTRACT_ADDRESS_CYPRESS;
       break;
-
-    case CHAINID.UNIQUE:
-      contractAddress = CONTRACT_ADDRESS_UNIQUE;
-      break;
-
-    case CHAINID.QUARTZ:
-      contractAddress = CONTRACT_ADDRESS_QUARTZ;
-      break;
-    case CHAINID.OPAL:
-      contractAddress = CONTRACT_ADDRESS_OPAL;
-      break;
+   
     default:
       break;
   }

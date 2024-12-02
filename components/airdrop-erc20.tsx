@@ -308,8 +308,8 @@ export function AirdropTokens() {
                     className="text-blue-500 underline"
                     href={
                       chainId === 1001
-                        ? `https://baobab.klaytnfinder.io/tx/${approveHash}`
-                        : `https://klaytnfinder.io/tx/${hash}`
+                        ? `https://kairos.kaiascan.io/tx/${approveHash}`
+                        : `https://kaiascan.io/tx/${hash}`
                     }
                   >
                     {truncateAddress(approveHash)}
