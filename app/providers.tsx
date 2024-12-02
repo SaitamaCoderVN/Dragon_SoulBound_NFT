@@ -7,11 +7,66 @@ import {
   getDefaultConfig,
 } from "@rainbow-me/rainbowkit";
 import { trustWallet, ledgerWallet } from "@rainbow-me/rainbowkit/wallets";
-import { kaia, kairos } from "wagmi/chains";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { WagmiProvider, http } from "wagmi";
 
 const { wallets } = getDefaultWallets();
+
+
+// Define the Kaia chain
+const kaia = {
+  id: 8_217,
+  name: 'Kaia',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'Kaia',
+    symbol: 'KAIA',
+  },
+  rpcUrls: {
+    default: { http: ['https://public-en.node.kaia.io'] },
+  },
+  blockExplorers: {
+    default: {
+      name: 'KaiaScan',
+      url: 'https://kaiascan.io',
+      apiUrl: 'https://api-cypress.klaytnscope.com/api',
+    },
+  },
+  contracts: {
+    multicall3: {
+      address: '0xcA11bde05977b3631167028862bE2a173976CA11' as `0x${string}`,
+      blockCreated: 96002415,
+    },
+  },
+};
+
+// Define the Kairos chain
+const kairos = {
+  id: 1_001,
+  name: 'Kairos Testnet',
+  network: 'kairos',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'Kairos KAIA',
+    symbol: 'KAIA',
+  },
+  rpcUrls: {
+    default: { http: ['https://public-en-kairos.node.kaia.io'] },
+  },
+  blockExplorers: {
+    default: {
+      name: 'KaiaScan',
+      url: 'https://kairos.kaiascan.io',
+    },
+  },
+  contracts: {
+    multicall3: {
+      address: '0xcA11bde05977b3631167028862bE2a173976CA11' as `0x${string}`,
+      blockCreated: 123390593,
+    },
+  },
+  testnet: true,
+};
 
 const config = getDefaultConfig({
   appName: "DApp Bootcamp Frontends",
